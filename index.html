@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jhojanarleyhernandez.github.io/">
+<meta property="og:title" content="Jhojan Arley Hernández · Líder de Diseño">
+<meta property="og:description" content="Packaging, editorial, vitrinas, fotografía y video con IA para moda de lujo.">
+<meta property="og:image" content="https://jhojanarleyhernandez.github.io/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_CO">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F5F1EB">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2712%27 fill=%27%2314213D%27/%3E%3Ctext x=%2732%27 y=%2744%27 font-family=%27Arial,sans-serif%27 font-size=%2734%27 font-weight=%27300%27 fill=%27%23F5F1EB%27 text-anchor=%27middle%27%3EJ%3C/text%3E%3C/svg%3E">
+<title>Jhojan Arley Hernández</title>
+<meta name="description" content="Portafolio de Jhojan Arley Hernández, Líder de Diseño en LE COLLEZIONI: dirección creativa, editorial, packaging y retail para moda de lujo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap">
+<style>
+  /* Layout: quiet luxury. Marfil y avena como fondo, azul sastre solo en la tinta de los títulos,
+     camello en detalles mínimos. El nombre en Archivo ligera, sin mayúsculas ni peso; la imagen del
+     trabajo manda. Mucho aire, filetes finos, nada compite. Alineación a la izquierda en todo. */
+  :root {
+    --ivory: #F5F1EB;      /* fondo de página */
+    --oat: #EAE3D8;        /* avena: secciones alternas y contacto */
+    --sheet: #FBF9F5;      /* superficies elevadas */
+    --navy: #14213D;       /* azul sastre: tinta de títulos y botón */
+    --navy-deep: #0E1830;
+    --ink: #222833;        /* texto */
+    --ink-soft: #464D5B;
+    --muted: #5F6574;
+    --camel: #B8936A;      /* camello: solo detalles */
+    --rule: #E1DAD0;
+    --rule-strong: #C3BAAD;
+
+    --font: 'Archivo', 'Helvetica Neue', Arial, system-ui, sans-serif;
+    --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+    color-scheme: light;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--ivory);
+    color: var(--ink);
+    font: 400 1.0625rem/1.7 var(--font);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  h1, h2, h3, h4 { font-family: var(--font); font-weight: 300; margin: 0; text-wrap: balance; }
+  p { margin: 0; }
+  a { color: inherit; }
+  img { display: block; max-width: 100%; }
+  ::selection { background: var(--navy); color: var(--ivory); }
+  :focus-visible { outline: 1.5px solid var(--navy); outline-offset: 4px; }
+  section[id] { scroll-margin-top: 72px; }
+
+  .display { font-weight: 300; letter-spacing: -0.03em; line-height: 1.02; color: var(--navy); }
+
+  .wrap { max-width: 1280px; margin-inline: auto; padding-inline: clamp(16px, 4.5vw, 56px); }
+  .skip { position: absolute; left: -9999px; top: 12px; z-index: 100; padding: 10px 14px; background: var(--navy); color: var(--ivory); text-decoration: none; }
+  .skip:focus { left: 16px; }
+  .i { width: 1.05em; height: 1.05em; flex: none; fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* ---------- Botones y enlaces ---------- */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem;
+    min-height: 48px; padding: 0 1.5rem; border-radius: 0; border: 1px solid transparent;
+    font: 500 0.875rem/1 var(--font); letter-spacing: 0.02em; text-decoration: none; white-space: nowrap; cursor: pointer;
+    transition: background-color 0.25s var(--ease-out), color 0.25s var(--ease-out), border-color 0.25s var(--ease-out), transform 0.16s var(--ease-out);
+  }
+  .btn:active { transform: scale(0.98); }
+  .btn-sm { min-height: 44px; padding: 0 1.15rem; }
+  .btn-solid, .btn-camel { background: var(--navy); color: var(--ivory); }
+  .btn-ghost { background: transparent; color: var(--navy); border-color: var(--rule-strong); }
+  @media (hover: hover) {
+    .btn-solid:hover, .btn-camel:hover { background: var(--navy-deep); }
+    .btn-ghost:hover { border-color: var(--navy); }
+  }
+  .link {
+    color: var(--navy); font-weight: 500; font-size: 0.9375rem; text-decoration: none; padding-bottom: 4px;
+    background: linear-gradient(var(--camel), var(--camel)) left bottom / 100% 1px no-repeat;
+    transition: background-size 0.35s var(--ease-out);
+  }
+  @media (hover: hover) { .link:hover { background-size: 40% 1px; } }
+
+  /* ---------- Barra superior ---------- */
+  .top { position: fixed; inset: 0 0 auto 0; z-index: 40; padding-top: env(safe-area-inset-top, 0px); color: var(--navy); transition: background-color 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out); }
+  .top.is-scrolled { background: rgba(245, 241, 235, 0.97); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); box-shadow: 0 1px 0 var(--rule); }
+  .top-in { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+  .mark { font: 500 0.8125rem/1 var(--font); font-stretch: 118%; text-transform: uppercase; letter-spacing: 0.16em; color: inherit; text-decoration: none; }
+  .mark-short { display: none; }
+  .menu { display: flex; align-items: center; gap: clamp(22px, 2.8vw, 40px); }
+  .menu a:not(.btn) { position: relative; padding-block: 6px; font-size: 0.875rem; color: var(--ink-soft); text-decoration: none; transition: color 0.2s var(--ease-out); }
+  .menu a:not(.btn)::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: var(--camel); transform: scaleX(0); transform-origin: left; transition: transform 0.35s var(--ease-out); }
+  .menu a.is-current { color: var(--navy); }
+  .menu a.is-current::after { transform: scaleX(1); }
+  @media (hover: hover) { .menu a:not(.btn):hover { color: var(--navy); } .menu a:not(.btn):hover::after { transform: scaleX(1); } }
+  .menu .btn { min-height: 40px; padding: 0 1rem; }
+  .menu-toggle { display: none; align-items: center; gap: 8px; min-height: 44px; padding: 0 4px; border: 0; background: transparent; color: inherit; font: 500 0.875rem/1 var(--font); cursor: pointer; }
+  @media (max-width: 820px) { .menu { display: none; } .menu-toggle { display: inline-flex; } }
+  @media (max-width: 520px) { .mark-full { display: none; } .mark-short { display: inline; } }
+
+  .overlay { position: fixed; inset: 0; z-index: 60; display: flex; flex-direction: column; background: var(--ivory); color: var(--navy); padding: calc(env(safe-area-inset-top, 0px) + 12px) clamp(16px, 4.5vw, 56px) calc(env(safe-area-inset-bottom, 0px) + 32px); overflow: auto; }
+  .overlay-head { display: flex; justify-content: space-between; align-items: center; height: 60px; }
+  .overlay nav { display: grid; gap: 4px; margin-top: 48px; border-top: 1px solid var(--rule); }
+  .overlay nav a { font: 300 2.25rem/1.1 var(--font); letter-spacing: -0.02em; color: var(--navy); text-decoration: none; padding: 14px 0; border-bottom: 1px solid var(--rule); }
+  .overlay .btn { margin-top: 36px; align-self: flex-start; }
+
+  /* ---------- Hero ---------- */
+  .hero { padding-top: calc(72px + clamp(48px, 8vw, 120px)); padding-bottom: clamp(72px, 9vw, 120px); }
+  .hero-meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 24px; margin-bottom: clamp(28px, 4vw, 48px); color: var(--muted); font-size: 0.875rem; }
+  .avail { display: inline-flex; align-items: center; gap: 10px; }
+  .avail i { width: 6px; height: 6px; border-radius: 50%; background: var(--camel); }
+  .hero-head { display: grid; gap: 32px; margin-bottom: clamp(48px, 7vw, 88px); }
+  .name { font-size: clamp(2.6rem, 6.8vw, 6rem); font-weight: 300; line-height: 0.98; letter-spacing: -0.04em; color: var(--navy); }
+  .name span { display: block; }
+  .hero-text { min-width: 0; }
+  .lede { font-size: clamp(1.0625rem, 1.3vw, 1.1875rem); line-height: 1.65; color: var(--ink-soft); max-width: 38ch; margin-bottom: 28px; }
+  .lede strong { font-weight: 500; color: var(--ink); }
+  .hero-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 28px; }
+  @media (min-width: 861px) {
+    .hero-head { grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: clamp(32px, 5vw, 80px); align-items: end; }
+  }
+  .hero-figure { margin: 0; min-width: 0; }
+  .hero-figure .frame { overflow: hidden; aspect-ratio: 16 / 8; max-height: 88vh; width: 100%; background: var(--oat); }
+  .hero-figure img { width: 100%; height: 100%; object-fit: cover; animation: settle 2.4s var(--ease-out) both; }
+
+  /* Movimiento con GSAP: solo cuando el script carga y el usuario no pidió menos movimiento */
+  .motion .hero-figure img { animation: none; }
+  .motion .media img, .motion .hero-figure img { transition: none; will-change: transform; }
+  .motion .hero-figure .frame, .motion .case .media, .motion .tile .media { will-change: clip-path; }
+  @keyframes settle { from { transform: scale(1.04); } to { transform: none; } }
+  figcaption.cap { margin-top: 14px; font-size: 0.8125rem; color: var(--muted); }
+  @media (max-width: 640px) { .hero-figure .frame { aspect-ratio: 4 / 3; } }
+
+  .facts { list-style: none; margin: clamp(56px, 8vw, 96px) 0 0; padding: 0; border-top: 1px solid var(--rule); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .facts li { padding: 24px 24px 0 0; }
+  .facts b { display: block; font: 300 clamp(2rem, 3.6vw, 3rem)/1 var(--font); letter-spacing: -0.03em; font-variant-numeric: lining-nums tabular-nums; color: var(--navy); margin-bottom: 10px; }
+  .facts span { display: block; max-width: 20ch; font-size: 0.875rem; color: var(--muted); }
+  @media (min-width: 861px) { .facts { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+
+  /* ---------- Marcas ---------- */
+  .brands { background: var(--oat); padding-block: clamp(40px, 5.5vw, 64px); }
+  .brands .wrap { display: grid; gap: 18px; }
+  .brands p { color: var(--muted); font-size: 0.875rem; }
+  .brands ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px clamp(28px, 4vw, 56px); }
+  .brands li { font: 400 clamp(1.05rem, 1.6vw, 1.3rem)/1.4 var(--font); font-stretch: 112%; letter-spacing: 0.01em; color: var(--ink-soft); }
+
+  /* ---------- Secciones ---------- */
+  .sec { padding-block: clamp(104px, 13vw, 184px); }
+  .sec-head { display: grid; gap: 16px; margin-bottom: clamp(56px, 7vw, 104px); }
+  .sec-head h2 { font-size: clamp(2rem, 4vw, 3.4rem); }
+  .sec-head p { color: var(--muted); max-width: 40ch; font-size: 0.9375rem; }
+  @media (min-width: 861px) { .sec-head { grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 32px; } }
+
+  /* ---------- Imagen o prueba de imprenta ---------- */
+  .media { position: relative; margin: 0; overflow: hidden; aspect-ratio: var(--ar, 16 / 10); max-width: 100%; background: var(--oat); }
+  .media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; transition: transform 1.2s var(--ease-out); }
+  .media video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; display: block; background: var(--ivory); }
+  .has-video::after { content: ""; position: absolute; inset: 0; z-index: 2; border: 1px solid var(--rule); pointer-events: none; }
+  .vid-toggle {
+    position: absolute; right: 12px; top: 12px; z-index: 3;
+    display: inline-flex; align-items: center; gap: 8px; min-height: 32px; padding: 0 14px;
+    border: 1px solid var(--rule); border-radius: 999px;
+    background: rgb(251 249 245 / 0.88); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+    color: var(--ink); font: 500 0.6875rem/1 var(--font); letter-spacing: 0.12em; text-transform: uppercase;
+    cursor: pointer; transition: background-color 0.2s var(--ease-out), border-color 0.2s var(--ease-out);
+  }
+  .vid-toggle:hover { background: var(--sheet); border-color: var(--rule-strong); }
+  .vid-toggle:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
+  .vid-toggle svg { width: 9px; height: 9px; fill: currentColor; }
+  .proof { display: grid; place-items: center; text-align: center; color: var(--muted); }
+  .proof::before {
+    content: ""; position: absolute; inset: 16px; pointer-events: none;
+    background:
+      linear-gradient(var(--rule-strong), var(--rule-strong)) left top / 16px 1px no-repeat,
+      linear-gradient(var(--rule-strong), var(--rule-strong)) left top / 1px 16px no-repeat,
+      linear-gradient(var(--rule-strong), var(--rule-strong)) right top / 16px 1px no-repeat,
+      linear-gradient(var(--rule-strong), var(--rule-strong)) right top / 1px 16px no-repeat,
+      linear-gradient(var(--rule-strong), var(--rule-strong)) left bottom / 16px 1px no-repeat,
+      linear-gradient(var(--rule-strong), var(--rule-strong)) left bottom / 1px 16px no-repeat,
+      linear-gradient(var(--rule-strong), var(--rule-strong)) right bottom / 16px 1px no-repeat,
+      linear-gradient(var(--rule-strong), var(--rule-strong)) right bottom / 1px 16px no-repeat;
+  }
+  .proof .note { padding: 32px; font-size: 0.8125rem; line-height: 1.5; }
+  .proof .note strong { display: block; margin-bottom: 4px; font: 400 1.0625rem/1.3 var(--font); color: var(--ink-soft); }
+
+  /* ---------- Trabajo ---------- */
+  .work { display: grid; gap: clamp(104px, 12vw, 176px); }
+  .case { display: grid; gap: 32px; }
+  .case .body { min-width: 0; }
+  .kind { font-size: 0.875rem; color: var(--muted); margin-bottom: 16px; }
+  .case h3 { font-size: clamp(1.6rem, 2.4vw, 2.1rem); font-weight: 300; line-height: 1.12; letter-spacing: -0.025em; color: var(--navy); margin-bottom: 18px; }
+  .sum { color: var(--ink-soft); max-width: 44ch; margin-bottom: 28px; }
+  .specs { margin: 0 0 32px; border-top: 1px solid var(--rule); }
+  .specs div { display: grid; grid-template-columns: minmax(0, 10ch) minmax(0, 1fr); gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--rule); font-size: 0.875rem; }
+  .specs dt { color: var(--muted); }
+  .specs dd { margin: 0; font-variant-numeric: tabular-nums; min-width: 0; color: var(--ink); }
+  .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 28px; }
+  .swatches { display: flex; flex-wrap: wrap; gap: 6px 16px; }
+  .sw { display: inline-flex; align-items: center; gap: 8px; }
+  .sw i { width: 12px; height: 12px; border-radius: 50%; background: var(--c); box-shadow: inset 0 0 0 1px rgba(20, 33, 61, 0.15); }
+  @media (hover: hover) { .case:hover .media img { transform: scale(1.015); } }
+  @media (min-width: 861px) {
+    .case { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 0 clamp(24px, 3vw, 48px); align-items: center; }
+    .case .media { grid-column: 1 / span 7; grid-row: 1; }
+    .case .body { grid-column: 9 / span 4; grid-row: 1; }
+    .case.flip .media { grid-column: 6 / span 7; }
+    .case.flip .body { grid-column: 1 / span 4; }
+  }
+
+  /* ---------- Sobre mí ---------- */
+  .about { display: grid; gap: 48px; }
+  .about .media { --ar: 4 / 5; max-width: 500px; }
+  .statement { font-size: clamp(1.5rem, 2.4vw, 2rem); font-weight: 300; line-height: 1.3; letter-spacing: -0.02em; color: var(--navy); max-width: 26ch; margin-bottom: 36px; }
+  .bio { display: grid; gap: 18px; color: var(--ink-soft); max-width: 58ch; }
+  .bio strong { font-weight: 500; color: var(--ink); }
+  .list-title { font: 500 0.9375rem/1.3 var(--font); margin: 56px 0 8px; color: var(--navy); }
+  .rows { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+  .rows li { display: grid; grid-template-columns: minmax(0, 11ch) minmax(0, 1fr); gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--rule); font-size: 0.9375rem; }
+  .rows time, .rows .yr { color: var(--muted); font-variant-numeric: tabular-nums; }
+  .rows b { font-weight: 500; }
+  .rows span.at { display: block; color: var(--muted); font-size: 0.875rem; }
+  @media (min-width: 861px) { .about { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(48px, 7vw, 112px); align-items: start; } .about .media { position: sticky; top: 104px; } }
+
+  /* ---------- Qué hago ---------- */
+  .caps { display: grid; gap: 48px 40px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); }
+  .cap h3 { font-size: 1rem; font-weight: 500; letter-spacing: 0; color: var(--navy); margin-bottom: 16px; padding-bottom: 14px; border-bottom: 1px solid var(--rule-strong); }
+  .cap ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 9px; color: var(--ink-soft); font-size: 0.9375rem; }
+  .edu { margin-top: clamp(72px, 9vw, 112px); display: grid; gap: 24px; }
+  @media (min-width: 861px) { .edu { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 48px; } }
+  .edu h3 { font-size: clamp(1.5rem, 2.2vw, 1.9rem); font-weight: 300; letter-spacing: -0.02em; color: var(--navy); }
+
+  /* ---------- Archivo ---------- */
+  .archive { display: grid; gap: clamp(16px, 2vw, 28px); grid-template-columns: minmax(0, 1fr); }
+  .tile { margin: 0; min-width: 0; }
+  .tile .media { --ar: 4 / 3; }
+  .tile figcaption { margin-top: 14px; font-size: 0.875rem; }
+  .tile figcaption b { display: block; font-weight: 500; color: var(--ink); }
+  .tile figcaption span { color: var(--muted); }
+  @media (hover: hover) { .tile:hover .media img { transform: scale(1.015); } }
+  @media (min-width: 640px) {
+    .archive { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .tile.wide { grid-column: span 2; }
+    .tile.wide .media { --ar: 16 / 9; }
+  }
+  @media (min-width: 1024px) {
+    .archive { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .tile .media, .tile.wide .media { aspect-ratio: auto; height: clamp(280px, 28vw, 400px); }
+  }
+
+  /* ---------- Contacto ---------- */
+  .contact { background: var(--oat); color: var(--ink); padding-block: clamp(104px, 13vw, 184px); }
+  .contact h2 { font-size: clamp(2.8rem, 7vw, 6rem); margin-bottom: clamp(24px, 3.5vw, 40px); }
+  .contact .lead { font-size: clamp(1.0625rem, 1.3vw, 1.1875rem); color: var(--ink-soft); max-width: 42ch; margin-bottom: clamp(40px, 6vw, 64px); }
+  .mail-row { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px; margin-bottom: 36px; }
+  .mail { font: 300 clamp(1.3rem, 3.2vw, 2.4rem)/1.2 var(--font); letter-spacing: -0.02em; color: var(--navy); text-decoration: underline; text-decoration-color: var(--camel); text-decoration-thickness: 1px; text-underline-offset: 0.22em; overflow-wrap: anywhere; min-width: 0; }
+  .contact-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: clamp(56px, 7vw, 88px); }
+  .contact dl { margin: 0; display: grid; border-top: 1px solid var(--rule-strong); }
+  .contact dl div { display: grid; grid-template-columns: minmax(0, 11ch) minmax(0, 1fr); gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--rule-strong); font-size: 0.9375rem; }
+  .contact dt { color: var(--muted); }
+  .contact dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+  .contact dd a { color: var(--navy); }
+  footer { background: var(--oat); color: var(--muted); font-size: 0.8125rem; padding-block: 0 40px; }
+  footer .foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; padding-top: 24px; border-top: 1px solid var(--rule-strong); }
+  footer a { color: var(--navy); }
+
+  /* ---------- Panel de caso ---------- */
+  dialog.sheet {
+    margin: 0 0 0 auto; padding: 0; border: 0; width: min(880px, 100%); max-width: 100%;
+    height: 100dvh; max-height: 100dvh; background: var(--sheet); color: var(--ink);
+    overflow: auto; overscroll-behavior: contain;
+  }
+  dialog.sheet::backdrop { background: rgba(20, 33, 61, 0.35); }
+  dialog.sheet[open] { animation: drawer-in 0.5s var(--ease-drawer); }
+  dialog.sheet[open]::backdrop { animation: fade-in 0.5s var(--ease-out); }
+  dialog.sheet.is-closing { animation: drawer-out 0.28s var(--ease-out) forwards; }
+  dialog.sheet.is-closing::backdrop { animation: fade-out 0.28s var(--ease-out) forwards; }
+  @keyframes drawer-in { from { transform: translateX(100%); } to { transform: none; } }
+  @keyframes drawer-out { to { transform: translateX(100%); } }
+  @keyframes fade-in { from { opacity: 0; } }
+  @keyframes fade-out { to { opacity: 0; } }
+  .sheet-bar { position: sticky; top: 0; z-index: 3; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px clamp(20px, 4vw, 48px); background: rgba(251, 249, 245, 0.97); border-bottom: 1px solid var(--rule); color: var(--muted); font-size: 0.875rem; }
+  .sheet-close { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 4px; border: 0; background: transparent; color: var(--navy); font: 500 0.875rem/1 var(--font); cursor: pointer; }
+  .sheet-body { display: grid; gap: 36px; padding: clamp(32px, 4.5vw, 56px) clamp(20px, 4vw, 48px) 80px; }
+  .sheet-body h3 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); font-weight: 300; line-height: 1.08; letter-spacing: -0.03em; color: var(--navy); }
+  .sheet-body h4 { font: 500 0.9375rem/1.3 var(--font); color: var(--navy); margin-bottom: 12px; }
+  .sheet-body p, .sheet-body li { max-width: 62ch; color: var(--ink-soft); }
+  .sheet-body ul { margin: 0; padding-left: 20px; display: grid; gap: 10px; }
+  .sheet-body .specs { margin: 0; }
+  .pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .pair .media { --ar: 4 / 3; }
+  @media (max-width: 520px) { .pair { grid-template-columns: minmax(0, 1fr); } }
+
+
+  /* ---------- Vitrinas: galería horizontal ---------- */
+  .vit { padding-block: clamp(104px, 13vw, 184px) clamp(72px, 9vw, 120px); background: var(--ivory); }
+  .vit .sec-head { margin-bottom: clamp(40px, 5vw, 64px); }
+  .vit-viewport { overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scrollbar-width: thin; }
+  .vit-viewport:focus-visible { outline-offset: -2px; }
+  .vit-track { list-style: none; margin: 0; padding: 0 max(clamp(16px, 4.5vw, 56px), calc((100vw - 1280px) / 2 + 56px)) 8px; display: flex; gap: clamp(16px, 2.2vw, 32px); width: max-content; }
+  .vit-item { scroll-snap-align: start; scroll-margin-left: clamp(16px, 4.5vw, 56px); }
+  .vit-item figure { margin: 0; }
+  .vit-frame { overflow: hidden; background: var(--oat); height: clamp(380px, 64vh, 720px); }
+  .vit-frame img { height: 100%; width: auto; max-width: none; display: block; }
+  .vit-item figcaption { margin-top: 14px; font-size: 0.875rem; }
+  .vit-item figcaption b { display: block; font-weight: 500; color: var(--ink); }
+  .vit-item figcaption span { color: var(--muted); }
+  .vit-foot { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: 28px; }
+  .vit-count { font-size: 0.875rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .vit-more { border: 0; background-color: transparent; cursor: pointer; font-family: var(--font); }
+  @media (max-width: 640px) { .vit-frame { height: 58vh; } }
+  .vit-pin.is-pinned .vit-viewport { overflow: hidden; scroll-snap-type: none; }
+  .motion .vit-frame img { will-change: transform; }
+
+  /* ---------- Galería del panel ---------- */
+  .gal { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+  .gal .media { --ar: 4 / 5; }
+  .gal .media.span2 { grid-column: span 2; --ar: auto; }
+  @media (max-width: 560px) { .gal { grid-template-columns: repeat(2, minmax(0, 1fr)); } .gal .media.span2 { --ar: 16 / 10; } }
+
+  /* ---------- Antes / con IA ---------- */
+  .ba { background: #F3F3F3; touch-action: pan-y; }
+  .ba img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .ba .ba-before { position: absolute; inset: 0; z-index: 2; clip-path: inset(0 calc(100% - var(--pos)) 0 0); }
+  .ba-handle { position: absolute; top: 0; bottom: 0; left: var(--pos); z-index: 3; width: 1px; background: var(--navy); pointer-events: none; }
+  .ba-handle::after { content: ""; position: absolute; top: 50%; left: 50%; width: 44px; height: 44px; margin: -22px 0 0 -22px; border-radius: 50%; background: var(--ivory); box-shadow: 0 0 0 1px var(--navy);
+    background-image: linear-gradient(var(--navy), var(--navy)), linear-gradient(var(--navy), var(--navy));
+    background-size: 1px 14px, 1px 14px; background-position: 18px 15px, 25px 15px; background-repeat: no-repeat; }
+  .ba-tag { position: absolute; top: 16px; z-index: 3; padding: 6px 12px; background: rgba(245, 241, 235, 0.92); color: var(--navy); font-size: 0.8125rem; font-weight: 500; pointer-events: none; }
+  .ba-tag-l { left: 16px; } .ba-tag-r { right: 16px; }
+  .ba-range { position: absolute; inset: 0; z-index: 4; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: ew-resize; -webkit-appearance: none; appearance: none; }
+  .ba:has(.ba-range:focus-visible) { outline: 1.5px solid var(--navy); outline-offset: 4px; }
+  .hint { font-size: 0.8125rem; color: var(--muted); }
+  @media (hover: hover) { .case:hover .ba img { transform: none; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  }
+</style>
+</head>
+<body>
+
+
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 8h16"/><path d="M4 16h16"/></symbol>
+  <symbol id="i-ext" viewBox="0 0 24 24"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect width="13" height="13" x="8" y="8" rx="1.5"/><path d="M4 16c-1 0-1.5-.5-1.5-1.5v-10C2.5 3.5 3 3 4 3h10c1 0 1.5.5 1.5 1.5"/></symbol>
+</svg>
+
+<a class="skip" href="#trabajo">Saltar al trabajo</a>
+
+<!-- ============ BARRA SUPERIOR ============ -->
+<header class="top" id="top">
+  <div class="wrap top-in">
+    <a class="mark" href="#inicio" aria-label="Jhojan Arley Hernández, volver al inicio"><span class="mark-full">Jhojan Arley Hernández</span><span class="mark-short">JAH</span></a>
+    <nav class="menu" aria-label="Principal">
+      <a href="#trabajo" data-spy="trabajo">Trabajo</a>
+      <a href="#vitrinas" data-spy="vitrinas">Vitrinas</a>
+      <a href="#sobre-mi" data-spy="sobre-mi">Sobre mí</a>
+      <a href="#archivo" data-spy="archivo">Archivo</a>
+      <a href="#contacto" class="btn btn-solid btn-sm">Contacto</a>
+    </nav>
+    <button class="menu-toggle" id="menu-open" type="button" aria-expanded="false" aria-controls="overlay">Menú <svg class="i"><use href="#i-menu"/></svg></button>
+  </div>
+</header>
+
+<div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-label="Menú" hidden>
+  <div class="overlay-head">
+    <span class="mark">JAH</span>
+    <button class="menu-toggle" id="menu-close" type="button" style="display:inline-flex">Cerrar <svg class="i"><use href="#i-x"/></svg></button>
+  </div>
+  <nav aria-label="Menú móvil">
+    <a href="#trabajo">Trabajo</a>
+    <a href="#vitrinas">Vitrinas</a>
+    <a href="#sobre-mi">Sobre mí</a>
+    <a href="#archivo">Archivo</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+  <a class="btn btn-solid" href="mailto:hernandezjhojanarley@gmail.com">Escribir un email</a>
+</div>
+
+<main>
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="inicio">
+    <div class="wrap">
+      <div class="hero-meta">
+        <span class="avail"><i aria-hidden="true"></i>Disponible para nuevos proyectos</span>
+        <span>Bogotá, Colombia</span>
+      </div>
+      <div class="hero-head">
+        <h1 class="name"><span>Jhojan Arley</span><span>Hernández</span></h1>
+        <div class="hero-text">
+          <p class="lede"><strong>Líder de Diseño en LE COLLEZIONI.</strong> Dirijo la imagen de una tienda multimarca de moda de lujo en cinco ciudades de Colombia: campañas, vitrinas, catálogos y packaging.</p>
+          <div class="hero-cta">
+            <a class="btn btn-solid" href="#trabajo">Ver el trabajo</a>
+            <a class="link" href="#contacto">Hablemos</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <figure class="hero-figure">
+      <div class="frame"><img src="img/p-01.jpg" alt="Las tres bolsas LE COLLEZIONI, grande, mediana y pequeña, vistas desde arriba sobre travertino" decoding="async"></div>
+      <figcaption class="cap wrap">Bolsas LE COLLEZIONI en sus tres formatos, enviadas a imprenta en 2026.</figcaption>
+    </figure>
+
+    <div class="wrap">
+      <ul class="facts" aria-label="En cifras">
+        <li><b>2023</b><span>Diseñando desde</span></li>
+        <li><b>4</b><span>Practicantes a cargo</span></li>
+        <li><b>5</b><span>Tiendas en cinco ciudades</span></li>
+        <li><b>30+</b><span>Sesiones de foto de colección al año</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ MARCAS ============ -->
+  <div class="brands">
+    <div class="wrap">
+      <p>Marcas que he presentado en catálogo, prensa y vitrina</p>
+      <ul>
+        <li>Ferragamo</li>
+        <li>Santoni</li>
+        <li>Pal Zileri</li>
+        <li>Peserico</li>
+        <li>Jacob Cohën</li>
+        <li>Herno</li>
+        <li>Boggi Milano</li>
+        <li>Harmont &amp; Blaine</li>
+        <li>Furla</li>
+        <li>Hackett London</li>
+        <li>Kenzo</li>
+        <li>Autry</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ============ TRABAJO ============ -->
+  <section class="sec" id="trabajo">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="display">Trabajo seleccionado</h2>
+        <p>Cinco proyectos para LE COLLEZIONI, de la imprenta a la inteligencia artificial.</p>
+      </div>
+
+      <div class="work">
+        <!-- Bolsas -->
+        <article class="case">
+          <figure class="media">
+            <img src="img/p-02.jpg" alt="Interior de las bolsas LE COLLEZIONI: forro ilustrado, logo en el doblez y asas de cinta marfil" decoding="async">
+          </figure>
+          <div class="body">
+            <p class="kind">Packaging para LE COLLEZIONI</p>
+            <h3>Bolsas y sistema de etiquetas</h3>
+            <p class="sum">Una bolsa café por fuera y un forro ilustrado por dentro, que cuenta la herencia sastrera de la marca a quien la abre.</p>
+            <dl class="specs">
+              <div><dt>Formatos</dt><dd>48,8 × 36 cm, 36,5 × 35 cm y 27 × 35,8 cm</dd></div>
+              <div><dt>Asas</dt><dd>Cinta de algodón marfil</dd></div>
+              <div><dt>Paleta</dt><dd><span class="swatches"><span class="sw"><i style="--c:#674636"></i>Café</span><span class="sw"><i style="--c:#E6DFD9"></i>Hueso</span><span class="sw"><i style="--c:#D3B12B"></i>Oro mate</span></span></dd></div>
+            </dl>
+            <div class="actions">
+              <button class="btn btn-solid btn-sm" type="button" data-open="caso-bolsas">Ver el caso</button>
+              <a class="link" href="https://www.behance.net/arleyhernandez" target="_blank" rel="noopener">Behance</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Editorial de temporada -->
+        <article class="case flip">
+          <figure class="media">
+            <img src="img/p-03.jpg" alt="Portada del catálogo Primavera Estate 2026 junto a la portada del inserto Fall Winter 2026 en El Heraldo" decoding="async">
+          </figure>
+          <div class="body">
+            <p class="kind">Editorial para LE COLLEZIONI</p>
+            <h3>Catálogos e inserto de temporada</h3>
+            <p class="sum">Las piezas impresas con las que LE COLLEZIONI presenta cada temporada: dos catálogos y un inserto en prensa, con las marcas italianas e internacionales de la tienda.</p>
+            <dl class="specs">
+              <div><dt>Piezas</dt><dd>Catálogo Primavera Estate 2026, catálogo Pal Zileri &amp; Peserico e inserto en El Heraldo</dd></div>
+              <div><dt>Catálogo</dt><dd>48 páginas, 22 × 28 cm</dd></div>
+              <div><dt>Inserto</dt><dd>12 páginas de 29,5 × 55,6 cm, octubre de 2026</dd></div>
+            </dl>
+            <div class="actions">
+              <button class="btn btn-solid btn-sm" type="button" data-open="caso-catalogo">Ver el caso</button>
+              <a class="link" href="https://www.behance.net/arleyhernandez" target="_blank" rel="noopener">Behance</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Campañas -->
+        <article class="case">
+          <figure class="media">
+            <img src="img/vit/vit-diptico.jpg" alt="Dos vitrinas de Ferragamo en gran formato: un hombre con abrigo y un bolso" width="1600" height="1000" decoding="async">
+          </figure>
+          <div class="body">
+            <p class="kind">Retail y campañas para LE COLLEZIONI</p>
+            <h3>Campañas y vitrinas en cinco tiendas</h3>
+            <p class="sum">Toda la comunicación comercial de la marca, con una sola voz visual de la vitrina a la publicación en redes.</p>
+            <dl class="specs">
+              <div><dt>Tiendas</dt><dd>Bogotá, Medellín, Cali, Barranquilla y Cartagena</dd></div>
+              <div><dt>Campañas</dt><dd>SALE, nuevas colecciones, aniversario y eventos</dd></div>
+              <div><dt>Fotografía</dt><dd>Más de 30 sesiones de colección al año</dd></div>
+            </dl>
+            <div class="actions">
+              <button class="btn btn-solid btn-sm" type="button" data-open="caso-campanas">Ver el caso</button>
+              <a class="link" href="#vitrinas">Recorrer las vitrinas</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Fotografía con IA -->
+        <article class="case flip">
+          <figure class="media ba" style="--pos: 50%">
+            <img class="ba-after" src="img/ia/ia-despues.jpg" alt="Fotos de producto de Harmont &amp; Blaine con modelos generados con IA: polo naranja y polo malva" width="1600" height="1000" decoding="async">
+            <div class="ba-before"><img src="img/ia/ia-antes.jpg" alt="Fotos de producto anteriores de Harmont &amp; Blaine con modelo en estudio: polo verde y polo rojo" width="1600" height="1000" decoding="async"></div>
+            <span class="ba-tag ba-tag-l">Antes</span>
+            <span class="ba-tag ba-tag-r">Con IA</span>
+            <span class="ba-handle" aria-hidden="true"></span>
+            <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Comparar las fotos de antes con las fotos hechas con IA">
+          </figure>
+          <div class="body">
+            <p class="kind">Fotografía de producto para LE COLLEZIONI</p>
+            <h3>Modelos con IA para la tienda en línea</h3>
+            <p class="sum">Las fotos de Harmont &amp; Blaine en la tienda en línea pasaron de un modelo de estudio a modelos generados con IA, con la prenda real y el logo intacto.</p>
+            <dl class="specs">
+              <div><dt>Marca</dt><dd>Harmont &amp; Blaine</dd></div>
+              <div><dt>Prendas</dt><dd>Polos, camisetas, buzos, chaquetas, chinos y jeans</dd></div>
+              <div><dt>Regla</dt><dd>El perro salchicha del logo, exacto en cada imagen</dd></div>
+            </dl>
+            <div class="actions">
+              <button class="btn btn-solid btn-sm" type="button" data-open="caso-ia">Ver el caso</button>
+              <span class="hint">Arrastra la línea para comparar</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- App -->
+        <article class="case">
+          <figure class="media has-video">
+            <video class="loop-video" src="img/app/equipocreativo.mp4" poster="img/app/equipocreativo-poster.jpg" muted loop playsinline preload="metadata" aria-label="Video de EquipoCreativo: asigno una tarea desde el computador, la practicante la recibe en su celular en tiempo real, otras áreas piden trabajo con un formulario y la dirección ve el avance del equipo"></video>
+            <button class="vid-toggle" type="button" aria-pressed="false"><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M2 1h2v8H2zM6 1h2v8H6z"/></svg><span>Pausar</span></button>
+          </figure>
+          <div class="body">
+            <p class="kind">Producto digital para LE COLLEZIONI</p>
+            <h3>EquipoCreativo</h3>
+            <p class="sum">La herramienta que construí para asignar, seguir y recibir el trabajo del equipo creativo en un solo lugar.</p>
+            <dl class="specs">
+              <div><dt>Tecnología</dt><dd>HTML conectado a Supabase, publicada en GitHub Pages</dd></div>
+              <div><dt>Accesos</dt><dd>Administración, practicantes, dirección y solicitudes de otras áreas</dd></div>
+              <div><dt>Datos</dt><dd>Actualización en tiempo real</dd></div>
+              <div><dt>Dispositivos</dt><dd>Computador y celular, donde se instala como app</dd></div>
+            </dl>
+            <div class="actions">
+              <button class="btn btn-solid btn-sm" type="button" data-open="caso-app">Ver el caso</button>
+              <a class="link" href="https://www.behance.net/arleyhernandez" target="_blank" rel="noopener">Behance</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VITRINAS ============ -->
+  <section class="vit" id="vitrinas" aria-labelledby="t-vitrinas">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="display" id="t-vitrinas">Vitrinas</h2>
+        <p>Cinco tiendas, una sola voz. Un recorrido por las vitrinas, fachadas y piezas de gran formato que dirigí.</p>
+      </div>
+    </div>
+    <div class="vit-pin">
+      <div class="vit-viewport" tabindex="0" aria-label="Galería de vitrinas, desplázate para ver más">
+        <ul class="vit-track">
+        <li class="vit-item">
+          <figure>
+            <div class="vit-frame"><img src="img/vit/v18.jpg" alt="Fachada de LE COLLEZIONI iluminada al atardecer, entre palmeras" width="1280" height="720" decoding="async"></div>
+            <figcaption><b>LE COLLEZIONI</b><span>Fachada iluminada</span></figcaption>
+          </figure>
+        </li>
+        <li class="vit-item">
+          <figure>
+            <div class="vit-frame"><img src="img/vit/v24.jpg" alt="Vitrina de Ferragamo con un hombre de abrigo claro en gran formato" width="1200" height="1600" decoding="async"></div>
+            <figcaption><b>Ferragamo</b><span>Vitrina de gran formato</span></figcaption>
+          </figure>
+        </li>
+        <li class="vit-item">
+          <figure>
+            <div class="vit-frame"><img src="img/vit/v14.jpg" alt="Vitrina de Ferragamo con un bolso en gran formato" width="900" height="1600" decoding="async"></div>
+            <figcaption><b>Ferragamo</b><span>Vitrina de bolso</span></figcaption>
+          </figure>
+        </li>
+        <li class="vit-item">
+          <figure>
+            <div class="vit-frame"><img src="img/vit/v23.jpg" alt="Vitrina de Ferragamo con una pieza escultórica de temporada" width="1200" height="1600" decoding="async"></div>
+            <figcaption><b>Ferragamo</b><span>Vitrina de temporada</span></figcaption>
+          </figure>
+        </li>
+        <li class="vit-item">
+          <figure>
+            <div class="vit-frame"><img src="img/vit/v19.jpg" alt="Tienda LE COLLEZIONI con vitrina de rayas azules de Harmont & Blaine" width="1204" height="960" decoding="async"></div>
+            <figcaption><b>Harmont &amp; Blaine</b><span>Vitrina de rayas en tienda</span></figcaption>
+          </figure>
+        </li>
+        <li class="vit-item">
+          <figure>
+            <div class="vit-frame"><img src="img/vit/v04.jpg" alt="Vitrina de Harmont & Blaine enmarcada con rayas rojas y blancas" width="1200" height="1600" decoding="async"></div>
+            <figcaption><b>Harmont &amp; Blaine</b><span>Marco de rayas rojas</span></figcaption>
+          </figure>
+        </li>
+        <li class="vit-item">
+          <figure>
+            <div class="vit-frame"><img src="img/vit/v13.jpg" alt="Vitrina ilustrada de Autry con zapatillas en estilo cómic" width="870" height="1280" decoding="async"></div>
+            <figcaption><b>Autry</b><span>Vitrina ilustrada</span></figcaption>
+          </figure>
+        </li>
+        <li class="vit-item">
+          <figure>
+            <div class="vit-frame"><img src="img/vit/v21.jpg" alt="Vinilo de nuevas colecciones con Boggi Milano, Hackett London y Kenzo" width="1200" height="1600" decoding="async"></div>
+            <figcaption><b>Nuevas colecciones</b><span>Vinilo con Boggi, Hackett y Kenzo</span></figcaption>
+          </figure>
+        </li>
+        <li class="vit-item">
+          <figure>
+            <div class="vit-frame"><img src="img/vit/v11.jpg" alt="Fachada con gran formato de Hackett London sobre la entrada de LE COLLEZIONI" width="1200" height="1600" decoding="async"></div>
+            <figcaption><b>Hackett London</b><span>Gran formato en fachada</span></figcaption>
+          </figure>
+        </li>
+        <li class="vit-item">
+          <figure>
+            <div class="vit-frame"><img src="img/vit/v10.jpg" alt="Fachada de LE COLLEZIONI con vinilos de Ferragamo Primavera Estate 2026" width="1600" height="900" decoding="async"></div>
+            <figcaption><b>Ferragamo</b><span>Fachada de Primavera Estate 2026</span></figcaption>
+          </figure>
+        </li>
+        </ul>
+      </div>
+      <div class="wrap vit-foot">
+        <span class="vit-count" aria-hidden="true"><span id="vit-now">01</span> / 10</span>
+        <button class="link vit-more" type="button" data-open="caso-campanas">Ver todas las vitrinas</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SOBRE MÍ ============ -->
+  <section class="sec" id="sobre-mi" style="background: var(--sheet)">
+    <div class="wrap">
+      <div class="about">
+        <figure class="media proof">
+          <!-- TU RETRATO: <img src="jhojan.jpg" alt="Jhojan Arley Hernández"> -->
+          <figcaption class="note"><strong>Tu retrato</strong>Imagen pendiente, vertical 1200 × 1500 px</figcaption>
+        </figure>
+        <div>
+          <h2 class="statement">Prefiero la discreción al ruido. Una marca de lujo se reconoce por lo que no necesita decir.</h2>
+          <div class="bio">
+            <p>Soy diseñador gráfico y trabajo donde se cruzan la moda, el diseño y la estrategia de marca. Entré a LE COLLEZIONI como practicante en 2025 y desde enero de 2026 soy <strong>Líder de Diseño</strong>: dirijo a cuatro practicantes y respondo por toda la comunicación visual de la marca.</p>
+            <p>Me interesa cómo una marca mantiene la coherencia entre temporadas, formatos y tiendas. Cuando el proceso del equipo se volvió el cuello de botella, construí nuestra propia herramienta para ordenarlo.</p>
+          </div>
+
+          <h3 class="list-title">Trayectoria</h3>
+          <ol class="rows">
+            <li><time>2023</time><div><b>Diseñador freelance</b><span class="at">MCM Electric, Lixus Company, Eggcellent y CleaNatural</span></div></li>
+            <li><time>2025</time><div><b>Practicante de Diseño</b><span class="at">LE COLLEZIONI</span></div></li>
+            <li><time>Fin de 2025</time><div><b>Diseñador Junior</b><span class="at">LE COLLEZIONI, contenido visual con IA</span></div></li>
+            <li><time>Ene 2026</time><div><b>Líder de Diseño</b><span class="at">LE COLLEZIONI, hasta hoy</span></div></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ QUÉ HAGO ============ -->
+  <section class="sec" id="habilidades">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="display">Qué hago</h2>
+        <p>Del concepto de una campaña a la herramienta que organiza al equipo que la produce.</p>
+      </div>
+      <div class="caps">
+        <div class="cap">
+          <h3>Dirección creativa</h3>
+          <ul><li>Campañas integradas</li><li>Vitrinas y material POP</li><li>Gran formato</li><li>Fotografía y dirección de arte</li></ul>
+        </div>
+        <div class="cap">
+          <h3>Diseño</h3>
+          <ul><li>Identidad y branding</li><li>Diseño editorial</li><li>Packaging</li><li>Ilustración</li></ul>
+        </div>
+        <div class="cap">
+          <h3>Liderazgo</h3>
+          <ul><li>Dirección de equipo</li><li>Mentoría de practicantes</li><li>Procesos y KPIs de producción</li><li>Gestión de proyectos</li></ul>
+        </div>
+        <div class="cap">
+          <h3>Herramientas</h3>
+          <ul><li>Photoshop, Illustrator, InDesign</li><li>Premiere Pro y After Effects</li><li>Figma</li><li>HTML, CSS, JavaScript y Supabase</li><li>IA para imagen</li></ul>
+        </div>
+      </div>
+
+      <div class="edu">
+        <h3>Formación</h3>
+        <ul class="rows">
+          <li><span class="yr">2026</span><div><b>Formación de Líderes con Talento, Integrales y Competitivos</b><span class="at">SENA, 40 horas, en curso</span></div></li>
+          <li><span class="yr">2025</span><div><b>Tecnólogo en Desarrollo de Medios Gráficos Visuales</b><span class="at">SENA</span></div></li>
+          <li><span class="yr">2024</span><div><b>Diseño de Sitios Web</b><span class="at">Cámara de Comercio de Bogotá</span></div></li>
+          <li><span class="yr">Idiomas</span><div><b>Español nativo</b><span class="at">Inglés intermedio</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ARCHIVO ============ -->
+  <section class="sec" id="archivo" style="padding-top: 0">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="display">Archivo</h2>
+        <p>Piezas sueltas de cada proyecto.</p>
+      </div>
+      <div class="archive">
+        <figure class="tile wide">
+          <div class="media"><img src="img/p-04.jpg" alt="Doble página de Harmont &amp; Blaine, colección Vivere a Colori, en el catálogo Primavera Estate 2026" decoding="async"></div>
+          <figcaption><b>Harmont &amp; Blaine, Vivere a Colori</b><span>Catálogo Primavera Estate 2026</span></figcaption>
+        </figure>
+        <figure class="tile">
+          <div class="media"><img src="img/p-05.jpg" alt="Bolsa pequeña LE COLLEZIONI con asas de cinta marfil y forro ilustrado" decoding="async"></div>
+          <figcaption><b>Bolsa pequeña, 27 × 35,8 cm</b><span>Packaging</span></figcaption>
+        </figure>
+        <figure class="tile">
+          <div class="media"><img src="img/p-06.jpg" alt="Páginas de Furla y The Extreme Collection en el inserto de El Heraldo" decoding="async"></div>
+          <figcaption><b>Furla y The Extreme Collection</b><span>Inserto en El Heraldo, Fall/Winter 2026</span></figcaption>
+        </figure>
+        <figure class="tile">
+          <div class="media"><img src="img/p-07.jpg" alt="Doble página de la nueva boutique de Medellín y la colección Santoni" decoding="async"></div>
+          <figcaption><b>Nueva boutique en Medellín y Santoni</b><span>Catálogo Primavera Estate 2026</span></figcaption>
+        </figure>
+        <figure class="tile">
+          <div class="media"><img src="img/app/app-direccion.jpg" alt="Panel de dirección de EquipoCreativo con cumplimiento del equipo, carga por persona y distribución de tareas por estado" decoding="async"></div>
+          <figcaption><b>EquipoCreativo</b><span>Vista de dirección</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACTO ============ -->
+  <section class="contact" id="contacto">
+    <div class="wrap">
+      <h2 class="display">Hablemos</h2>
+      <p class="lead">Busco posiciones de liderazgo creativo y proyectos freelance de identidad, editorial y retail.</p>
+      <div class="mail-row">
+        <a class="mail" id="c-email" href="mailto:hernandezjhojanarley@gmail.com">hernandezjhojanarley@gmail.com</a>
+        <button class="btn btn-ghost btn-sm" type="button" data-copy="hernandezjhojanarley@gmail.com"><svg class="i"><use href="#i-copy"/></svg><span>Copiar email</span></button>
+      </div>
+      <div class="contact-cta">
+        <a class="btn btn-camel" href="mailto:hernandezjhojanarley@gmail.com">Escribir un email</a>
+        <a class="btn btn-ghost" href="https://wa.me/573112496025" target="_blank" rel="noopener">Abrir WhatsApp</a>
+      </div>
+      <dl>
+        <div><dt>Teléfono</dt><dd>+57 311 249 6025</dd></div>
+        <div><dt>Behance</dt><dd><a href="https://www.behance.net/arleyhernandez" target="_blank" rel="noopener">behance.net/arleyhernandez</a></dd></div>
+        <div><dt>Ciudad</dt><dd>Bogotá, Colombia</dd></div>
+      </dl>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <span>© 2026 Jhojan Arley Hernández</span>
+      <a href="#inicio">Volver arriba</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ PANELES DE CASO ============ -->
+<dialog class="sheet" id="caso-bolsas" aria-labelledby="t-bolsas">
+  <div class="sheet-bar"><span>Packaging para LE COLLEZIONI</span><button class="sheet-close" type="button" data-close>Cerrar <svg class="i"><use href="#i-x"/></svg></button></div>
+  <figure class="media" style="--ar: 16 / 10"><img src="img/p-08.jpg" alt="Las tres bolsas LE COLLEZIONI vistas desde arriba" decoding="async"></figure>
+  <div class="sheet-body">
+    <h3 id="t-bolsas">Bolsas y sistema de etiquetas</h3>
+    <dl class="specs">
+      <div><dt>Grande</dt><dd>48,8 × 36 cm, fuelle de 16,7 cm</dd></div>
+      <div><dt>Mediana</dt><dd>36,5 × 35 cm, fuelle de 12,9 cm</dd></div>
+      <div><dt>Pequeña</dt><dd>27 × 35,8 cm, fuelle de 12 cm</dd></div>
+      <div><dt>Impresión</dt><dd>Policromía por ambas caras</dd></div>
+    </dl>
+    <div><h4>Contexto</h4><p>La bolsa es lo último que el cliente se lleva de la tienda. El rediseño buscaba que contara la herencia sastrera de la marca con la misma discreción del resto de LE COLLEZIONI.</p></div>
+    <div><h4>Qué hice</h4>
+      <ul>
+        <li>Un forro ilustrado en línea de grabado: trajes, calzado, camisas, corbatas y abrigos, con textos sobre la sastrería italiana.</li>
+        <li>Un logo pequeño en el doblez interior, entre las asas, para quien mira dentro de la bolsa.</li>
+        <li>Asas de cinta de algodón marfil en lugar de cordón.</li>
+        <li>Un sistema de etiquetas: marquilla cosida, etiqueta narrativa de marca y hangtag con flor de lis.</li>
+        <li>La especificación de color con los proveedores en Pantone, y los artes finales de los tres formatos para la litografía.</li>
+      </ul>
+    </div>
+    <div><h4>Paleta</h4><div class="swatches"><span class="sw"><i style="--c:#674636"></i>Café #674636</span><span class="sw"><i style="--c:#E6DFD9"></i>Hueso #E6DFD9</span><span class="sw"><i style="--c:#D3B12B"></i>Oro mate #D3B12B</span></div></div>
+    <div class="pair">
+      <figure class="media"><img src="img/p-02.jpg" alt="Detalle del forro ilustrado y del logo interior" decoding="async"></figure>
+      <figure class="media"><img src="img/p-05.jpg" alt="Bolsa pequeña con asas de cinta marfil" decoding="async"></figure>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="sheet" id="caso-catalogo" aria-labelledby="t-catalogo">
+  <div class="sheet-bar"><span>Editorial para LE COLLEZIONI</span><button class="sheet-close" type="button" data-close>Cerrar <svg class="i"><use href="#i-x"/></svg></button></div>
+  <figure class="media" style="--ar: 16 / 10"><img src="img/p-03.jpg" alt="Portada del catálogo Primavera Estate 2026 y portada del inserto en El Heraldo" decoding="async"></figure>
+  <div class="sheet-body">
+    <h3 id="t-catalogo">Catálogos e inserto de temporada</h3>
+    <dl class="specs">
+      <div><dt>Catálogo</dt><dd>Primavera Estate 2026: 48 páginas, 22 × 28 cm</dd></div>
+      <div><dt>Inserto</dt><dd>El Heraldo, Fall/Winter 2026: 12 páginas de 29,5 × 55,6 cm</dd></div>
+      <div><dt>Catálogo</dt><dd>Pal Zileri &amp; Peserico</dd></div>
+    </dl>
+    <div><h4>Contexto</h4><p>Cada temporada, LE COLLEZIONI presenta en papel las colecciones de las marcas que vende. Cada pieza tiene que dar a cada marca su propia voz y, al mismo tiempo, verse como LE COLLEZIONI.</p></div>
+
+    <div><h4>Catálogo Primavera Estate 2026</h4><p>Tres marcas en 48 páginas: Ferragamo, con su calzado y accesorios; Harmont &amp; Blaine, con la colección Vivere a Colori; y Santoni. Incluye un pliego para la apertura de la nueva boutique de Medellín, que también cierra la contraportada.</p></div>
+    <figure class="media" style="--ar: 16 / 10"><img src="img/p-04.jpg" alt="Doble página de Harmont &amp; Blaine, Vivere a Colori" decoding="async"></figure>
+    <div class="pair">
+      <figure class="media" style="--ar: 16 / 10"><img src="img/p-09.jpg" alt="Doble página de calzado Ferragamo" decoding="async"></figure>
+      <figure class="media" style="--ar: 16 / 10"><img src="img/p-07.jpg" alt="Doble página de la nueva boutique de Medellín y Santoni" decoding="async"></figure>
+    </div>
+
+    <div><h4>Inserto en El Heraldo</h4><p>Doce páginas en formato de prensa para la temporada Fall/Winter 2026, con Pal Zileri y Peserico como marcas nuevas, y Jacob Cohën, Herno, Boggi Milano, Harmont &amp; Blaine, Furla y The Extreme Collection. Una marca por página, con la campaña como protagonista y un llamado a visitar las tiendas.</p></div>
+    <figure class="media" style="--ar: 16 / 10"><img src="img/p-10.jpg" alt="Portada del inserto y páginas de Jacob Cohën y Furla" decoding="async"></figure>
+    <figure class="media" style="--ar: 16 / 10"><img src="img/p-11.jpg" alt="Páginas de Herno, Furla y The Extreme Collection en el inserto" decoding="async"></figure>
+
+    <div><h4>Catálogo Pal Zileri &amp; Peserico</h4><p>El catálogo para presentar las dos marcas nuevas: portada con Pal Zileri, doble página de apertura para Peserico y un sistema de cuatro plantillas reutilizables.</p></div>
+    <figure class="media proof" style="--ar: 16 / 10"><!-- <img src="catalogo-pz-peserico.jpg" alt=""> --><figcaption class="note"><strong>Catálogo Pal Zileri &amp; Peserico</strong>Imagen pendiente</figcaption></figure>
+  </div>
+</dialog>
+
+<dialog class="sheet" id="caso-campanas" aria-labelledby="t-campanas">
+  <div class="sheet-bar"><span>Retail y campañas para LE COLLEZIONI</span><button class="sheet-close" type="button" data-close>Cerrar <svg class="i"><use href="#i-x"/></svg></button></div>
+  <figure class="media" style="--ar: 16 / 10"><img src="img/vit/vit-diptico.jpg" alt="Dos vitrinas de Ferragamo en gran formato" decoding="async"></figure>
+  <div class="sheet-body">
+    <h3 id="t-campanas">Campañas y vitrinas en cinco tiendas</h3>
+    <div><h4>Contexto</h4><p>Toda la comunicación comercial de LE COLLEZIONI pasa por el equipo creativo: temporadas de SALE, lanzamientos de nuevas colecciones, aniversario y eventos especiales, en cinco tiendas.</p></div>
+    <div><h4>Qué hice</h4>
+      <ul>
+        <li>Concepto y dirección creativa de cada campaña, de la idea a la aprobación.</li>
+        <li>Diseño y dirección de vitrinas para Bogotá, Medellín, Cali, Barranquilla y Cartagena.</li>
+        <li>Material POP: bolsas, vinilos para vitrina e impresión de gran formato.</li>
+        <li>Dirección de más de 30 sesiones de foto de colección al año, con retoque y composición para catálogo y redes.</li>
+        <li>Un sistema de KPIs para seguir la producción fotográfica de cada colección.</li>
+      </ul>
+    </div>
+    <div><h4>Resultado</h4><p>Una sola voz visual en cinco ciudades y en cada formato, del vinilo de vitrina a la publicación en redes.</p></div>
+    <div><h4>Ferragamo</h4><p>Vitrinas de gran formato con la campaña de la marca: una imagen por vidrio y el nombre de la casa como única tipografía.</p></div>
+    <div class="gal"><figure class="media"><img src="img/vit/v24.jpg" alt="Vitrina de Ferragamo con un hombre de abrigo claro en gran formato" loading="lazy" decoding="async"></figure><figure class="media"><img src="img/vit/v14.jpg" alt="Vitrina de Ferragamo con un bolso en gran formato" loading="lazy" decoding="async"></figure><figure class="media"><img src="img/vit/v23.jpg" alt="Vitrina de Ferragamo con una pieza escultórica de temporada" loading="lazy" decoding="async"></figure><figure class="media"><img src="img/vit/v22.jpg" alt="Vitrina de Ferragamo con una modelo en gran formato" loading="lazy" decoding="async"></figure><figure class="media"><img src="img/vit/v15.jpg" alt="Vitrina de Ferragamo con un bolso negro" loading="lazy" decoding="async"></figure><figure class="media"><img src="img/vit/v10.jpg" alt="Fachada de LE COLLEZIONI con vinilos de Ferragamo Primavera Estate 2026" loading="lazy" decoding="async"></figure></div>
+    <div><h4>Harmont &amp; Blaine</h4><p>Un sistema de rayas que se reconoce de lejos y se adapta a cada vitrina, en rojo o en azul.</p></div>
+    <div class="gal"><figure class="media span2"><img src="img/vit/v19.jpg" alt="Tienda LE COLLEZIONI con vitrina de rayas azules de Harmont & Blaine" loading="lazy" decoding="async"></figure><figure class="media"><img src="img/vit/v04.jpg" alt="Vitrina de Harmont & Blaine enmarcada con rayas rojas y blancas" loading="lazy" decoding="async"></figure><figure class="media"><img src="img/vit/v09.jpg" alt="Vitrina de Harmont & Blaine con rayas rojas en una fachada blanca" loading="lazy" decoding="async"></figure><figure class="media"><img src="img/vit/v02.jpg" alt="Panel de Harmont & Blaine en tienda" loading="lazy" decoding="async"></figure><figure class="media"><img src="img/vit/v08.jpg" alt="Vitrina de rayas azules de Harmont & Blaine con maniquíes" loading="lazy" decoding="async"></figure></div>
+    <div><h4>Gran formato en tienda</h4><p>Cajas de luz, paneles y vinilos para Boggi Milano, Hackett London y las nuevas colecciones.</p></div>
+    <div class="gal"><figure class="media"><img src="img/vit/v05.jpg" alt="Caja de luz de Boggi Milano en tienda" loading="lazy" decoding="async"></figure><figure class="media"><img src="img/vit/v07.jpg" alt="Gran formato de Boggi Milano en tienda" loading="lazy" decoding="async"></figure><figure class="media"><img src="img/vit/v03.jpg" alt="Vinilo de Boggi Milano en una puerta de tienda" loading="lazy" decoding="async"></figure><figure class="media"><img src="img/vit/v01.jpg" alt="Paneles de Hackett London y Paul Smith en tienda" loading="lazy" decoding="async"></figure><figure class="media"><img src="img/vit/v11.jpg" alt="Fachada con gran formato de Hackett London sobre la entrada de LE COLLEZIONI" loading="lazy" decoding="async"></figure><figure class="media"><img src="img/vit/v21.jpg" alt="Vinilo de nuevas colecciones con Boggi Milano, Hackett London y Kenzo" loading="lazy" decoding="async"></figure></div>
+    <div><h4>Fachadas y piezas especiales</h4><p>La tienda vista desde la calle, una vitrina ilustrada para Autry y la pieza del mes del padre.</p></div>
+    <div class="gal"><figure class="media span2"><img src="img/vit/v18.jpg" alt="Fachada de LE COLLEZIONI iluminada al atardecer, entre palmeras" loading="lazy" decoding="async"></figure><figure class="media"><img src="img/vit/v13.jpg" alt="Vitrina ilustrada de Autry con zapatillas en estilo cómic" loading="lazy" decoding="async"></figure><figure class="media span2"><img src="img/vit/v20.jpg" alt="Fachada de LE COLLEZIONI al atardecer durante la temporada de SALE" loading="lazy" decoding="async"></figure><figure class="media"><img src="img/vit/v17.jpg" alt="Pieza del mes del padre con dos hombres brindando" loading="lazy" decoding="async"></figure></div>
+  </div>
+</dialog>
+
+<dialog class="sheet" id="caso-ia" aria-labelledby="t-ia">
+  <div class="sheet-bar"><span>Fotografía de producto para LE COLLEZIONI</span><button class="sheet-close" type="button" data-close>Cerrar <svg class="i"><use href="#i-x"/></svg></button></div>
+  <figure class="media" style="--ar: 1952 / 520"><img src="img/ia/ia-despues-fila.jpg" alt="Cuatro fotos de producto de Harmont &amp; Blaine con modelos generados con IA" decoding="async"></figure>
+  <div class="sheet-body">
+    <h3 id="t-ia">Modelos con IA para la tienda en línea</h3>
+    <div><h4>Contexto</h4><p>La tienda en línea de LE COLLEZIONI mostraba Harmont &amp; Blaine con fotos de estudio hechas con un mismo modelo. El objetivo fue que cada foto de producto atrajera al cliente como lo hace una campaña, sin cambiar la prenda.</p></div>
+    <div><h4>Antes</h4></div>
+    <figure class="media" style="--ar: 1470 / 520"><img src="img/ia/ia-antes-fila.jpg" alt="Tres fotos de producto anteriores con el mismo modelo de estudio" decoding="async"></figure>
+    <div><h4>Con IA</h4></div>
+    <figure class="media" style="--ar: 1952 / 520"><img src="img/ia/ia-despues-fila.jpg" alt="Cuatro fotos de producto con modelos generados con IA" decoding="async"></figure>
+    <div><h4>Qué hice</h4>
+      <ul>
+        <li>Escribí los prompts para componer modelos con cada prenda real: polos, camisetas, buzos, chaquetas, chinos y jeans.</li>
+        <li>Puse una regla fija para todas las imágenes: el perro salchicha del logo tiene que salir exacto.</li>
+        <li>Las fotos comparten fondo, luz y encuadre, así que la grilla de la tienda se ve como una sola sesión.</li>
+        <li>Cada prenda tiene su propio modelo, lo que le da variedad a la colección.</li>
+      </ul>
+    </div>
+    <div><h4>Resultado</h4><p>Una tienda en línea con fotos de catálogo consistentes, modelos que encajan con el estilo de la marca y la prenda como protagonista.</p></div>
+  </div>
+</dialog>
+
+<dialog class="sheet" id="caso-app" aria-labelledby="t-app">
+  <div class="sheet-bar"><span>Producto digital para LE COLLEZIONI</span><button class="sheet-close" type="button" data-close>Cerrar <svg class="i"><use href="#i-x"/></svg></button></div>
+  <figure class="media" style="--ar: 16 / 10"><video src="img/app/equipocreativo.mp4" poster="img/app/equipocreativo-poster.jpg" muted loop playsinline controls preload="none" data-play-on-open aria-label="Video de EquipoCreativo, 30 segundos, sin sonido y con subtítulos"></video></figure>
+  <div class="sheet-body">
+    <h3 id="t-app">EquipoCreativo</h3>
+    <div><h4>Contexto</h4><p>El equipo recibe tareas propias y pedidos de otras áreas, y cada persona necesita ver algo distinto: los practicantes su trabajo, yo la asignación y la dirección el avance.</p></div>
+    <div><h4>Qué hice</h4>
+      <ul>
+        <li>Diseñé y programé una app web en un solo archivo HTML conectado a Supabase (Postgres, Storage y Realtime).</li>
+        <li>La publiqué en GitHub Pages. Funciona en el navegador y se instala en el celular como app, sin pasar por la tienda.</li>
+        <li>Un panel de administración con contraseña para asignar y reasignar tareas.</li>
+        <li>Una vista de solo lectura para cada practicante y un panel para la dirección.</li>
+        <li>Un formulario de solicitudes para que otras áreas pidan trabajo creativo, que reviso y delego.</li>
+      </ul>
+    </div>
+    <div><h4>Resultado</h4><p>Tareas, carga de trabajo y pedidos de otras áreas en un solo lugar, actualizados en tiempo real.</p></div>
+    <div class="pair">
+      <figure class="media"><img src="img/app/app-practicante.jpg" alt="Vista de practicante en el celular: tareas activas, cumplimiento y la tarea del día con su estado" loading="lazy" decoding="async"></figure>
+      <figure class="media"><img src="img/app/app-solicitudes.jpg" alt="Formulario para que otras áreas soliciten trabajo al equipo creativo" loading="lazy" decoding="async"></figure>
+    </div>
+  </div>
+</dialog>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+  (function () {
+    var top = document.getElementById('top');
+    function onScroll() { top.classList.toggle('is-scrolled', window.scrollY > 24); }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // Sección actual en la barra
+    var spyLinks = document.querySelectorAll('[data-spy]');
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          spyLinks.forEach(function (a) {
+            var on = a.getAttribute('data-spy') === e.target.id;
+            a.classList.toggle('is-current', on);
+            if (on) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
+          });
+        });
+      }, { rootMargin: '-45% 0px -50% 0px' });
+      ['inicio', 'trabajo', 'vitrinas', 'sobre-mi', 'habilidades', 'archivo', 'contacto'].forEach(function (id) {
+        var el = document.getElementById(id); if (el) io.observe(el);
+      });
+    }
+
+    // Menú móvil
+    var overlay = document.getElementById('overlay');
+    var openBtn = document.getElementById('menu-open');
+    var closeBtn = document.getElementById('menu-close');
+    function setMenu(open) {
+      overlay.hidden = !open;
+      openBtn.setAttribute('aria-expanded', String(open));
+      document.body.style.overflow = open ? 'hidden' : '';
+      (open ? closeBtn : openBtn).focus();
+    }
+    openBtn.addEventListener('click', function () { setMenu(true); });
+    closeBtn.addEventListener('click', function () { setMenu(false); });
+    overlay.addEventListener('click', function (e) { if (e.target.closest('nav a, .btn')) setMenu(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !overlay.hidden) setMenu(false); });
+
+    // Paneles de caso
+    var lastTrigger = null;
+    function closeSheet(d) {
+      if (!d.open || d.classList.contains('is-closing')) return;
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduce || typeof d.close !== 'function') { finish(); return; }
+      d.classList.add('is-closing');
+      d.addEventListener('animationend', finish, { once: true });
+      setTimeout(finish, 400);
+      function finish() {
+        if (!d.open) return;
+        d.classList.remove('is-closing');
+        if (typeof d.close === 'function') d.close(); else d.removeAttribute('open');
+        document.body.style.overflow = '';
+        if (lastTrigger) lastTrigger.focus();
+      }
+    }
+    document.querySelectorAll('[data-open]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var d = document.getElementById(btn.getAttribute('data-open'));
+        if (!d) return;
+        lastTrigger = btn;
+        d.scrollTop = 0;
+        if (typeof d.showModal === 'function') d.showModal(); else d.setAttribute('open', '');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+    document.querySelectorAll('dialog.sheet').forEach(function (d) {
+      d.addEventListener('click', function (e) {
+        if (e.target === d || e.target.closest('[data-close]')) closeSheet(d);
+      });
+      d.addEventListener('cancel', function (e) { e.preventDefault(); closeSheet(d); });
+      d.addEventListener('close', function () { d.querySelectorAll('video').forEach(function (v) { v.pause(); }); });
+    });
+    document.querySelectorAll('[data-open]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var d = document.getElementById(btn.getAttribute('data-open'));
+        if (!d || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        d.querySelectorAll('video[data-play-on-open]').forEach(function (v) { var p = v.play(); if (p && p.catch) p.catch(function () {}); });
+      });
+    });
+
+    // Video en bucle del caso: corre solo cuando está a la vista y se puede pausar.
+    document.querySelectorAll('.has-video').forEach(function (fig) {
+      var v = fig.querySelector('video'); var btn = fig.querySelector('.vid-toggle');
+      if (!v || !btn) return;
+      var label = btn.querySelector('span'); var path = btn.querySelector('path');
+      var userPaused = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var visible = false;
+      function paint() {
+        var playing = !v.paused;
+        label.textContent = playing ? 'Pausar' : 'Reproducir';
+        path.setAttribute('d', playing ? 'M2 1h2v8H2zM6 1h2v8H6z' : 'M2 1l7 4-7 4z');
+        btn.setAttribute('aria-pressed', playing ? 'false' : 'true');
+      }
+      function sync() {
+        if (visible && !userPaused && !document.querySelector('dialog[open]')) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+        else v.pause();
+      }
+      v.addEventListener('play', paint); v.addEventListener('pause', paint);
+      btn.addEventListener('click', function () { userPaused = !v.paused; if (!userPaused) visible = true; if (userPaused) v.pause(); else sync(); });
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries) { visible = entries[0].isIntersecting; sync(); }, { threshold: 0.35 }).observe(fig);
+      } else { visible = true; sync(); }
+      document.querySelectorAll('dialog.sheet').forEach(function (d) { d.addEventListener('close', sync); });
+      document.querySelectorAll('[data-open]').forEach(function (b) { b.addEventListener('click', function () { v.pause(); }); });
+      paint();
+    });
+
+    // Copiar email
+    document.querySelectorAll('[data-copy]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var label = btn.querySelector('span');
+        var text = btn.getAttribute('data-copy');
+        function done(msg) { label.textContent = msg; setTimeout(function () { label.textContent = 'Copiar email'; }, 1800); }
+        function fallback() {
+          var el = document.getElementById('c-email');
+          var r = document.createRange(); r.selectNodeContents(el);
+          var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+          done('Email seleccionado');
+        }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(function () { done('Email copiado'); }, fallback);
+        } else { fallback(); }
+      });
+    });
+  })();
+</script>
+<script>
+  // Parallax con GSAP + ScrollTrigger. Si la librería no carga, la página queda completa y estática.
+  (function () {
+    if (!window.gsap || !window.ScrollTrigger) return;
+    gsap.registerPlugin(ScrollTrigger);
+    var mm = gsap.matchMedia();
+
+    mm.add('(prefers-reduced-motion: no-preference)', function () {
+      document.documentElement.classList.add('motion');
+
+      // 1. La imagen principal empieza al ancho del texto y se expande hasta los bordes de la pantalla.
+      var frame = document.querySelector('.hero-figure .frame');
+      var ref = document.querySelector('.hero .wrap');
+      if (frame && ref) {
+        var gutter = function () {
+          var cs = getComputedStyle(ref);
+          var inner = ref.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+          return Math.max(0, (document.documentElement.clientWidth - inner) / 2);
+        };
+        gsap.fromTo(frame,
+          { clipPath: function () { return 'inset(0px ' + gutter() + 'px 0px ' + gutter() + 'px)'; } },
+          { clipPath: 'inset(0px 0px 0px 0px)', ease: 'none',
+            scrollTrigger: { trigger: frame, start: 'top 80%', end: 'top 12%', scrub: 1.2, invalidateOnRefresh: true } });
+        gsap.fromTo(frame.querySelector('img'),
+          { scale: 1.14, yPercent: -3 },
+          { scale: 1, yPercent: 4, ease: 'none',
+            scrollTrigger: { trigger: frame, start: 'top bottom', end: 'bottom top', scrub: 1.2 } });
+      }
+
+      // 2. El nombre sube un poco más lento que la página.
+      gsap.to('.hero .name', { yPercent: -22, ease: 'none',
+        scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 1.2 } });
+
+      // 3. Imágenes de casos y archivo: se abren desde el centro y la foto se desliza dentro del marco.
+      gsap.utils.toArray('.case .media, .tile .media').forEach(function (m) {
+        gsap.fromTo(m,
+          { clipPath: 'inset(8% 8% 8% 8%)' },
+          { clipPath: 'inset(0% 0% 0% 0%)', ease: 'none',
+            scrollTrigger: { trigger: m, start: 'top 92%', end: 'top 42%', scrub: 1.2 } });
+        var img = m.classList.contains('ba') ? null : m.querySelector('img');
+        if (img) {
+          gsap.fromTo(img,
+            { scale: 1.22, yPercent: -5 },
+            { scale: 1.06, yPercent: 5, ease: 'none',
+              scrollTrigger: { trigger: m, start: 'top bottom', end: 'bottom top', scrub: 1.2 } });
+        }
+      });
+
+      return function () { document.documentElement.classList.remove('motion'); };
+    });
+
+    // 4. Vitrinas: en escritorio la galería se fija y avanza de lado con el scroll.
+    mm.add('(min-width: 861px) and (prefers-reduced-motion: no-preference)', function () {
+      var pin = document.querySelector('.vit-pin');
+      var vp = pin && pin.querySelector('.vit-viewport');
+      var track = pin && pin.querySelector('.vit-track');
+      if (!pin || !vp || !track) return;
+      pin.classList.add('is-pinned');
+      vp.scrollLeft = 0;
+      var dist = function () { return Math.max(0, track.scrollWidth - vp.clientWidth); };
+      var now = document.getElementById('vit-now');
+      var items = track.querySelectorAll('.vit-item');
+      var tween = gsap.to(track, {
+        x: function () { return -dist(); }, ease: 'none',
+        scrollTrigger: {
+          trigger: pin, start: 'center center', end: function () { return '+=' + dist(); },
+          pin: true, scrub: 1, anticipatePin: 1, invalidateOnRefresh: true,
+          onUpdate: function (self) {
+            if (!now) return;
+            var i = Math.min(items.length, Math.max(1, Math.round(self.progress * (items.length - 1)) + 1));
+            now.textContent = (i < 10 ? '0' : '') + i;
+          }
+        }
+      });
+      track.querySelectorAll('.vit-frame img').forEach(function (img) {
+        gsap.fromTo(img, { scale: 1.12 }, { scale: 1, ease: 'none',
+          scrollTrigger: { trigger: img.parentNode, containerAnimation: tween, start: 'left right', end: 'center center', scrub: true } });
+      });
+      return function () { pin.classList.remove('is-pinned'); gsap.set(track, { clearProps: 'x' }); };
+    });
+
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { ScrollTrigger.refresh(); });
+    window.addEventListener('load', function () { ScrollTrigger.refresh(); });
+  })();
+  // Contador de la galería cuando se desliza a mano (celular o sin animación).
+  (function () {
+    var vp = document.querySelector('.vit-viewport'); var now = document.getElementById('vit-now');
+    if (!vp || !now) return;
+    var items = vp.querySelectorAll('.vit-item');
+    vp.addEventListener('scroll', function () {
+      if (vp.closest('.is-pinned')) return;
+      var x = vp.scrollLeft, best = 0, d = Infinity;
+      items.forEach(function (it, k) { var dd = Math.abs(it.offsetLeft - x - 16); if (dd < d) { d = dd; best = k; } });
+      now.textContent = (best + 1 < 10 ? '0' : '') + (best + 1);
+    }, { passive: true });
+  })();
+
+  // Comparador antes / con IA
+  document.querySelectorAll('.ba').forEach(function (fig) {
+    var r = fig.querySelector('.ba-range');
+    if (!r) return;
+    var set = function () { fig.style.setProperty('--pos', r.value + '%'); };
+    r.addEventListener('input', set); set();
+  });
+</script>
+
+</body>
+</html>
