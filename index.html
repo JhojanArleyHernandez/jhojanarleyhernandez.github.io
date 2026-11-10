@@ -89,6 +89,7 @@
     transition: background-size 0.35s var(--ease-out);
   }
   @media (hover: hover) { .link:hover { background-size: 40% 1px; } }
+  button.link { border: 0; border-radius: 0; padding: 0 0 4px; font-family: inherit; line-height: inherit; cursor: pointer; }
 
   /* ---------- Barra superior ---------- */
   .top { position: fixed; inset: 0 0 auto 0; z-index: 40; padding-top: env(safe-area-inset-top, 0px); color: var(--navy); transition: background-color 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out); }
@@ -298,7 +299,55 @@
   .pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
   .pair .media { --ar: 4 / 3; }
   @media (max-width: 520px) { .pair { grid-template-columns: minmax(0, 1fr); } }
+  .trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+  .trio .media { --ar: 3 / 4; }
+  @media (max-width: 520px) { .trio { grid-template-columns: repeat(2, minmax(0, 1fr)); } .trio .media:first-child { grid-column: 1 / -1; --ar: 4 / 5; } }
 
+  /* Planos de la bolsa: paneles a escala, plano interior y capítulos */
+  .plano { margin: 0; padding: clamp(24px, 4.5vw, 48px) clamp(20px, 4vw, 48px) clamp(20px, 3vw, 28px); background: var(--oat); border-bottom: 1px solid var(--rule); }
+  .plano-k { margin: 0 0 20px; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+  .plano-row { display: flex; align-items: flex-end; gap: clamp(10px, 2.4vw, 24px); }
+  .plano-pz { flex: var(--w) 1 0; min-width: 0; margin: 0; }
+  .plano-pz img { display: block; width: 100%; height: auto; aspect-ratio: var(--ar); }
+  .plano-pz figcaption { margin-top: 10px; font-size: 0.75rem; line-height: 1.45; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .plano-pz figcaption b { display: block; font-weight: 500; font-size: 0.8125rem; color: var(--ink); }
+  .plano > figcaption.cap { margin-top: 20px; }
+  .flat { margin: 0; min-width: 0; }
+  .sheet-body > * { min-width: 0; }
+  .flat-scroll { overflow-x: auto; border: 1px solid var(--rule); }
+  .flat-scroll:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
+  .flat-scroll img { display: block; width: 100%; min-width: 760px; height: auto; }
+  .flat .hint-m { display: none; }
+  @media (max-width: 760px) { .flat .hint-m { display: inline; } }
+  .chap { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: clamp(18px, 3vw, 32px); align-items: start; }
+  .chap.narrow { grid-template-columns: minmax(0, 0.55fr) minmax(0, 1fr); }
+  .chap figure { margin: 0; }
+  .chap img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); }
+  .chap .num { display: block; margin-bottom: 8px; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+  .chap blockquote { margin: 16px 0 0; padding-left: 14px; border-left: 2px solid var(--camel); }
+  .chap blockquote p { color: var(--ink); }
+  .chap blockquote .tr { margin-top: 4px; font-size: 0.8125rem; color: var(--muted); }
+  .sheet-body p.cap { margin-top: -22px; font-size: 0.8125rem; color: var(--muted); }
+
+  /* Visor 3D de las bolsas */
+  .b3d { position: relative; aspect-ratio: 4 / 3; overflow: hidden; scroll-margin-top: 76px; border: 1px solid var(--rule); background: radial-gradient(120% 90% at 50% 30%, var(--sheet) 0%, var(--oat) 100%); }
+  .b3d canvas { position: absolute; inset: 0; display: block; width: 100%; height: 100%; cursor: grab; outline: none; }
+  .b3d canvas:active { cursor: grabbing; }
+  .b3d canvas:focus-visible { box-shadow: inset 0 0 0 2px var(--navy); }
+  .b3d-ui { position: absolute; left: 12px; top: 12px; z-index: 2; display: flex; flex-wrap: wrap; gap: 6px; }
+  .b3d-ui button { min-height: 32px; padding: 0 12px; border: 1px solid var(--rule-strong); border-radius: 999px; background: rgb(251 249 245 / 0.9); color: var(--ink); font: 500 0.75rem/1 var(--font); cursor: pointer; transition: background-color 0.2s var(--ease-out), color 0.2s var(--ease-out); }
+  .b3d-ui button:hover { background: var(--sheet); }
+  .b3d-ui button[aria-pressed="true"] { background: var(--navy); border-color: var(--navy); color: var(--sheet); }
+  .b3d-ui button:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
+  .sheet-body .b3d p { max-width: none; }
+  .b3d-hint { position: absolute; left: 12px; bottom: 10px; z-index: 2; margin: 0; font-size: 0.75rem; color: var(--muted); pointer-events: none; }
+  .b3d-status { position: absolute; inset: 0; z-index: 1; display: grid; place-items: center; margin: 0; padding: 24px; text-align: center; font-size: 0.875rem; color: var(--muted); pointer-events: none; }
+  .b3d.is-ready .b3d-status { display: none; }
+  .b3d.is-error canvas, .b3d.is-error .b3d-ui, .b3d.is-error .b3d-hint { display: none; }
+  @media (max-width: 520px) { .b3d { aspect-ratio: 1 / 1; } }
+
+  
+  @media (max-width: 640px) { .chap, .chap.narrow { grid-template-columns: minmax(0, 1fr); } .chap.narrow figure { max-width: 240px; } }
 
   /* ---------- Vitrinas: galería horizontal ---------- */
   .vit { padding-block: clamp(104px, 13vw, 184px) clamp(72px, 9vw, 120px); background: var(--ivory); }
@@ -348,7 +397,6 @@
 </style>
 </head>
 <body>
-
 
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -451,7 +499,7 @@
     <div class="wrap">
       <div class="sec-head">
         <h2 class="display">Trabajo seleccionado</h2>
-        <p>Cinco proyectos para LE COLLEZIONI, de la imprenta a la inteligencia artificial.</p>
+        <p>Seis proyectos, de la imprenta a la inteligencia artificial: cinco para LE COLLEZIONI y uno para Lixus Company.</p>
       </div>
 
       <div class="work">
@@ -462,8 +510,8 @@
           </figure>
           <div class="body">
             <p class="kind">Packaging para LE COLLEZIONI</p>
-            <h3>Bolsas y sistema de etiquetas</h3>
-            <p class="sum">Una bolsa café por fuera y un forro ilustrado por dentro, que cuenta la herencia sastrera de la marca a quien la abre.</p>
+            <h3>Bolsas de compra</h3>
+            <p class="sum">Café por fuera y, por dentro, una ilustración que cuenta la sastrería italiana, cómo llegó a LE COLLEZIONI y cómo se viste formal hoy.</p>
             <dl class="specs">
               <div><dt>Formatos</dt><dd>48,8 × 36 cm, 36,5 × 35 cm y 27 × 35,8 cm</dd></div>
               <div><dt>Asas</dt><dd>Cinta de algodón marfil</dd></div>
@@ -471,10 +519,13 @@
             </dl>
             <div class="actions">
               <button class="btn btn-solid btn-sm" type="button" data-open="caso-bolsas">Ver el caso</button>
+              <button class="link" type="button" data-open="caso-bolsas" data-goto="b3d">Ver en 3D</button>
               <a class="link" href="https://www.behance.net/arleyhernandez" target="_blank" rel="noopener">Behance</a>
             </div>
           </div>
         </article>
+
+        
 
         <!-- Editorial de temporada -->
         <article class="case flip">
@@ -563,6 +614,27 @@
             <div class="actions">
               <button class="btn btn-solid btn-sm" type="button" data-open="caso-app">Ver el caso</button>
               <a class="link" href="https://www.behance.net/arleyhernandez" target="_blank" rel="noopener">Behance</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Lixus -->
+        <article class="case flip">
+          <figure class="media has-video">
+            <video class="loop-video" src="img/lixus/lixus.mp4" poster="img/lixus/lixus-poster.jpg" muted loop playsinline preload="metadata" aria-label="Video de Lixus: el panel del inventario, la ficha de un producto nuevo, la alerta de stock bajo, la búsqueda y una venta desde el celular que actualiza el panel"></video>
+            <button class="vid-toggle" type="button" aria-pressed="false"><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M2 1h2v8H2zM6 1h2v8H6z"/></svg><span>Pausar</span></button>
+          </figure>
+          <div class="body">
+            <p class="kind">Producto digital para Lixus Company</p>
+            <h3>Lixus: inventario y ventas</h3>
+            <p class="sum">La app con la que Lixus Company controla su inventario y vende desde el celular. El panel muestra al momento qué hay, qué falta y cuánto se vendió.</p>
+            <dl class="specs">
+              <div><dt>Panel</dt><dd>Ventas del mes, valor del inventario, unidades en stock y productos por reponer</dd></div>
+              <div><dt>Productos</dt><dd>Ficha con código de barras, proveedor, stock mínimo y precio sugerido</dd></div>
+              <div><dt>Celular</dt><dd>Venta con buscador, escáner y carrito; el panel se actualiza solo</dd></div>
+            </dl>
+            <div class="actions">
+              <button class="btn btn-solid btn-sm" type="button" data-open="caso-lixus">Ver el caso</button>
             </div>
           </div>
         </article>
@@ -781,30 +853,87 @@
 <!-- ============ PANELES DE CASO ============ -->
 <dialog class="sheet" id="caso-bolsas" aria-labelledby="t-bolsas">
   <div class="sheet-bar"><span>Packaging para LE COLLEZIONI</span><button class="sheet-close" type="button" data-close>Cerrar <svg class="i"><use href="#i-x"/></svg></button></div>
-  <figure class="media" style="--ar: 16 / 10"><img src="img/p-08.jpg" alt="Las tres bolsas LE COLLEZIONI vistas desde arriba" decoding="async"></figure>
+  <figure class="plano">
+    <p class="plano-k">Plano exterior · paneles frontales a escala</p>
+    <div class="plano-row">
+      <figure class="plano-pz" style="--w: 48.8; --ar: 48.8 / 36"><img src="img/bolsa/frente-grande.jpg" width="976" height="720" alt="Panel frontal de la bolsa grande: fondo café con la flor de lis y LE COLLEZIONI en hueso" decoding="async"><figcaption><b>Grande</b>48,8 × 36 cm · fuelle 16,7 cm</figcaption></figure>
+      <figure class="plano-pz" style="--w: 36.5; --ar: 36.5 / 35"><img src="img/bolsa/frente-mediana.jpg" width="730" height="700" alt="Panel frontal de la bolsa mediana" decoding="async"><figcaption><b>Mediana</b>36,5 × 35 cm · fuelle 12,9 cm</figcaption></figure>
+      <figure class="plano-pz" style="--w: 27; --ar: 27 / 35.8"><img src="img/bolsa/frente-pequena.jpg" width="540" height="716" alt="Panel frontal de la bolsa pequeña" decoding="async"><figcaption><b>Pequeña</b>27 × 35,8 cm · fuelle 12 cm</figcaption></figure>
+    </div>
+    <figcaption class="cap">El logo mide lo mismo en las tres bolsas: «COLLEZIONI» de 10,8 cm de ancho.</figcaption>
+  </figure>
   <div class="sheet-body">
-    <h3 id="t-bolsas">Bolsas y sistema de etiquetas</h3>
+    <h3 id="t-bolsas">Bolsas de compra</h3>
+    <div><h4>Contexto</h4><p>La bolsa es lo último que el cliente se lleva de la tienda. El rediseño buscaba que por fuera fuera tan discreta como el resto de LE COLLEZIONI y que por dentro contara de dónde viene lo que el cliente acaba de comprar.</p></div>
     <dl class="specs">
-      <div><dt>Grande</dt><dd>48,8 × 36 cm, fuelle de 16,7 cm</dd></div>
-      <div><dt>Mediana</dt><dd>36,5 × 35 cm, fuelle de 12,9 cm</dd></div>
-      <div><dt>Pequeña</dt><dd>27 × 35,8 cm, fuelle de 12 cm</dd></div>
+      <div><dt>Logo frontal</dt><dd>«COLLEZIONI» de 10,8 cm, igual en los tres tamaños</dd></div>
+      <div><dt>Logo interior</dt><dd>En el doblez, entre las asas: 3,8 cm, un tercio del frontal</dd></div>
+      <div><dt>Doblez</dt><dd>5 cm en la pequeña y la mediana, 4 cm en la grande</dd></div>
+      <div><dt>Asas</dt><dd>Cinta de algodón marfil</dd></div>
       <div><dt>Impresión</dt><dd>Policromía por ambas caras</dd></div>
     </dl>
-    <div><h4>Contexto</h4><p>La bolsa es lo último que el cliente se lleva de la tienda. El rediseño buscaba que contara la herencia sastrera de la marca con la misma discreción del resto de LE COLLEZIONI.</p></div>
+
+    <div><h4>Plano interior: una historia en tres capítulos</h4><p>Por dentro, la bolsa lleva una ilustración en línea de grabado que cuenta, en italiano, la historia del vestir formal: de dónde viene, cómo llegó a LE COLLEZIONI y cómo se lleva hoy. El mismo diseño va en los tres tamaños.</p></div>
+    <figure class="flat">
+      <div class="flat-scroll" tabindex="0" role="region" aria-label="Plano interior completo de la bolsa"><img src="img/bolsa/interior-plano.jpg" width="2400" height="722" alt="Plano interior extendido de la bolsa grande con la ilustración completa: la sastrería italiana, LE COLLEZIONI y el vestir de hoy" loading="lazy" decoding="async"></div>
+      <figcaption class="cap">Plano interior extendido de la bolsa grande: frente, fuelle, espalda y fuelle.<span class="hint-m"> Desliza para verlo completo.</span></figcaption>
+    </figure>
+
+    <div class="chap">
+      <figure><img src="img/bolsa/cap1-origen.jpg" width="1100" height="645" alt="Frente interior: La sartoria italiana, con dos figuras de época y el arte del calzado" loading="lazy" decoding="async"></figure>
+      <div>
+        <span class="num">Capítulo 1 · El origen</span>
+        <h4>La sastrería italiana</h4>
+        <p>En los años sesenta, los sastres italianos rompieron con la rigidez inglesa: hombro suave, chaqueta ligera y un corte que sigue el cuerpo. Así nació una elegancia mediterránea, menos formal pero igual de refinada. La acompaña el arte del calzado hecho a mano.</p>
+        <blockquote><p>«Un abito non si indossa. Si abita.»</p><p class="tr">Un traje no se viste: se habita.</p></blockquote>
+      </div>
+    </div>
+    <div class="chap">
+      <figure><img src="img/bolsa/cap2-llegada.jpg" width="1090" height="670" alt="Espalda interior: texto sobre LE COLLEZIONI en Colombia, tres caballeros, el sastre, el cuello y la corbata" loading="lazy" decoding="async"></figure>
+      <div>
+        <span class="num">Capítulo 2 · La llegada</span>
+        <h4>Cómo llegó a LE COLLEZIONI</h4>
+        <p>Sesenta años después, esa tradición cruza el océano. En Colombia, LE COLLEZIONI la trae a un contexto nuevo: no una sola marca, sino una selección de casas italianas e internacionales para quien busca lujo auténtico y no ostentación. La acompañan el sastre, el arte del cuello y el de la corbata.</p>
+      </div>
+    </div>
+    <div class="chap narrow">
+      <figure><img src="img/bolsa/cap3-hoy.jpg" width="385" height="675" alt="Fuelle interior: el arte de lo cotidiano y de la versatilidad, con polo, jean y chaqueta" loading="lazy" decoding="async"></figure>
+      <div>
+        <span class="num">Capítulo 3 · Hoy</span>
+        <h4>El vestir formal hoy</h4>
+        <p>No todos los días piden chaqueta y corbata, pero todos merecen cuidado: un polo bien cortado, un jean elegido con criterio, unos zapatos que no fallan. Y una prenda bien construida que acompaña del trabajo a la noche sin perder carácter.</p>
+        <blockquote><p>«L'eleganza non richiede sempre una giacca.»</p><p class="tr">La elegancia no siempre pide chaqueta.</p></blockquote>
+      </div>
+    </div>
+
     <div><h4>Qué hice</h4>
       <ul>
-        <li>Un forro ilustrado en línea de grabado: trajes, calzado, camisas, corbatas y abrigos, con textos sobre la sastrería italiana.</li>
+        <li>Diseñé las tres bolsas y el forro ilustrado en línea de grabado, con su relato en tres capítulos.</li>
         <li>Un logo pequeño en el doblez interior, entre las asas, para quien mira dentro de la bolsa.</li>
         <li>Asas de cinta de algodón marfil en lugar de cordón.</li>
-        <li>Un sistema de etiquetas: marquilla cosida, etiqueta narrativa de marca y hangtag con flor de lis.</li>
         <li>La especificación de color con los proveedores en Pantone, y los artes finales de los tres formatos para la litografía.</li>
       </ul>
     </div>
     <div><h4>Paleta</h4><div class="swatches"><span class="sw"><i style="--c:#674636"></i>Café #674636</span><span class="sw"><i style="--c:#E6DFD9"></i>Hueso #E6DFD9</span><span class="sw"><i style="--c:#D3B12B"></i>Oro mate #D3B12B</span></div></div>
-    <div class="pair">
-      <figure class="media"><img src="img/p-02.jpg" alt="Detalle del forro ilustrado y del logo interior" decoding="async"></figure>
-      <figure class="media"><img src="img/p-05.jpg" alt="Bolsa pequeña con asas de cinta marfil" decoding="async"></figure>
+
+    <div><h4>Así quedó</h4><p>Las tres bolsas armadas con los artes finales: café por fuera y la historia por dentro. Gíralas con el mouse o con el dedo para ver el forro.</p></div>
+    <div class="b3d" id="b3d">
+      <canvas tabindex="0" role="img" aria-label="Modelo 3D de las bolsas LE COLLEZIONI. Arrastra para girarlo y usa la rueda o dos dedos para acercar."></canvas>
+      <div class="b3d-ui" role="group" aria-label="Elegir bolsa">
+        <button type="button" data-b="todas" aria-pressed="true">Las tres</button>
+        <button type="button" data-b="grande" aria-pressed="false">Grande</button>
+        <button type="button" data-b="mediana" aria-pressed="false">Mediana</button>
+        <button type="button" data-b="pequena" aria-pressed="false">Pequeña</button>
+      </div>
+      <p class="b3d-hint">Arrastra para girar · Rueda o dos dedos para acercar</p>
+      <p class="b3d-status" aria-live="polite">Cargando el modelo 3D…</p>
     </div>
+    <figure class="media" style="--ar: 16 / 10"><img src="img/p-08.jpg" alt="Las tres bolsas LE COLLEZIONI vistas desde arriba, con el forro ilustrado a la vista" loading="lazy" decoding="async"></figure>
+    <div class="pair">
+      <figure class="media"><img src="img/p-02.jpg" alt="Detalle del forro ilustrado y del logo interior" loading="lazy" decoding="async"></figure>
+      <figure class="media"><img src="img/p-05.jpg" alt="Bolsa pequeña con asas de cinta marfil" loading="lazy" decoding="async"></figure>
+    </div>
+    <p class="cap">El modelo 3D y los mockups usan los artes finales enviados a la litografía.</p>
   </div>
 </dialog>
 
@@ -908,6 +1037,32 @@
   </div>
 </dialog>
 
+<dialog class="sheet" id="caso-lixus" aria-labelledby="t-lixus">
+  <div class="sheet-bar"><span>Producto digital para Lixus Company</span><button class="sheet-close" type="button" data-close>Cerrar <svg class="i"><use href="#i-x"/></svg></button></div>
+  <figure class="media" style="--ar: 16 / 10"><video src="img/lixus/lixus.mp4" poster="img/lixus/lixus-poster.jpg" muted loop playsinline controls preload="none" data-play-on-open aria-label="Video de Lixus, 30 segundos, sin sonido y con subtítulos"></video></figure>
+  <div class="sheet-body">
+    <h3 id="t-lixus">Lixus: inventario y ventas</h3>
+    <div><h4>Contexto</h4><p>Lixus Company necesitaba saber en todo momento cuánto tenía en bodega, qué se estaba agotando y cuánto vendía, y poder registrar cada venta en el momento, desde el celular.</p></div>
+    <div><h4>Qué hice</h4>
+      <ul>
+        <li>Diseñé y programé una app web de inventario y ventas, con un panel para el computador y una vista de venta para el celular.</li>
+        <li>Un panel de inicio con las ventas del mes frente al mes anterior, el valor del inventario a costo y a precio de venta, las unidades en stock y los productos por reponer.</li>
+        <li>El inventario por categoría, las ventas de los últimos 14 días y los movimientos recientes: entradas, salidas y ventas, con quién las hizo.</li>
+        <li>Una ficha de producto con código de barras que se puede escanear, categoría, proveedor, estado, foto, stock mínimo y precio de venta sugerido a partir del costo.</li>
+        <li>Alertas de productos agotados o por debajo del mínimo, con un botón para reponer y registrar la entrada.</li>
+        <li>En el celular: buscar o escanear el producto, armar el carrito, elegir el medio de pago y confirmar la venta. El panel del computador se actualiza solo.</li>
+      </ul>
+    </div>
+    <div><h4>Resultado</h4><p>El inventario y las ventas de Lixus Company en un solo lugar: lo que hay, lo que falta y lo que se vendió, al día y desde cualquier dispositivo.</p></div>
+    <figure class="media" style="--ar: 16 / 10"><img src="img/lixus/lixus-panel.jpg" width="1440" height="900" alt="Panel de inicio de Lixus: ventas del mes, valor del inventario, unidades en stock, productos por reponer, inventario por categoría y productos que requieren atención" loading="lazy" decoding="async"></figure>
+    <div class="pair">
+      <figure class="media"><img src="img/lixus/lixus-producto.jpg" width="1200" height="900" alt="Ficha de nuevo producto con código de barras, categoría, proveedor, costo, precio sugerido y stock mínimo" loading="lazy" decoding="async"></figure>
+      <figure class="media"><img src="img/lixus/lixus-venta.jpg" width="1200" height="900" alt="Pantalla de nueva venta en el celular junto al panel del computador" loading="lazy" decoding="async"></figure>
+    </div>
+  </div>
+</dialog>
+
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script>
@@ -1142,6 +1297,291 @@
     var set = function () { fig.style.setProperty('--pos', r.value + '%'); };
     r.addEventListener('input', set); set();
   });
+</script>
+<script>
+  // Botones que abren un caso y bajan hasta una parte (por ejemplo "Ver en 3D").
+  document.querySelectorAll('[data-goto]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var el = document.getElementById(b.getAttribute('data-goto'));
+      if (!el) return;
+      var go = function () { el.scrollIntoView({ block: 'start' }); };
+      requestAnimationFrame(function () { requestAnimationFrame(go); });
+      setTimeout(go, 450);
+    });
+  });
+
+  // Bolsas en 3D. Three.js se carga solo cuando el visor aparece en pantalla.
+  (function () {
+    var box = document.getElementById('b3d');
+    if (!box) return;
+    var dlg = box.closest('dialog');
+    var canvas = box.querySelector('canvas');
+    var statusEl = box.querySelector('.b3d-status');
+    var buttons = box.querySelectorAll('[data-b]');
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var api = null, loading = false;
+
+    function hasGL() {
+      try { var c = document.createElement('canvas'); return !!(window.WebGLRenderingContext && (c.getContext('webgl2') || c.getContext('webgl'))); }
+      catch (e) { return false; }
+    }
+    function fail() {
+      box.classList.add('is-error');
+      statusEl.textContent = 'Este navegador no puede mostrar el modelo 3D. Abajo están las imágenes de las bolsas.';
+    }
+    function start() {
+      if (api) { api.play(); return; }
+      if (loading) return;
+      loading = true;
+      if (!hasGL()) { fail(); return; }
+      Promise.all([import('three'), import('three/addons/controls/OrbitControls.js')])
+        .then(function (m) { api = build(m[0], m[1].OrbitControls); api.play(); })
+        .catch(function (e) { console.error(e); fail(); });
+    }
+
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) { if (en.isIntersecting) start(); else if (api) api.pause(); });
+      }, { root: dlg, threshold: 0.1 }).observe(box);
+    }
+    if (dlg) dlg.addEventListener('close', function () { if (api) api.pause(); });
+    buttons.forEach(function (b) {
+      b.addEventListener('click', function () {
+        buttons.forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+        if (api) api.view(b.getAttribute('data-b'));
+      });
+    });
+
+    function build(THREE, OrbitControls) {
+      var BROWN = '#5f4136', INNER = '#dcd5ce', RIBBON = '#e8dfcd';
+      // Medidas reales en cm: ancho, alto, fuelle y doblez superior.
+      var SIZES = {
+        grande:  { W: 48.8, H: 36,   D: 16.7, cuff: 4 },
+        mediana: { W: 36.5, H: 35,   D: 12.9, cuff: 5 },
+        pequena: { W: 27,   H: 35.8, D: 12,   cuff: 5 }
+      };
+      // Plano interior extendido (img/bolsa/interior-plano.jpg): frente, fuelle, espalda y fuelle.
+      var IMG_W = 2400, IMG_H = 722, TOP = 0.085;
+      var PANEL = { front: [0, 0.3813], g1: [0.3813, 0.5087], back: [0.5087, 0.8733], g2: [0.8733, 1] };
+      var LOGO_CROP = [157, 245, 225, 179];  // logo de frente-pequena.jpg: «COLLEZIONI» = 10,8 cm
+      var PXCM = 24;
+
+      var renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+      renderer.outputColorSpace = THREE.SRGBColorSpace;
+      renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      renderer.toneMappingExposure = 1.05;
+      renderer.shadowMap.enabled = true;
+      renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+      var scene = new THREE.Scene();
+      var camera = new THREE.PerspectiveCamera(30, 4 / 3, 1, 3000);
+      var controls = new OrbitControls(camera, canvas);
+      controls.enableDamping = true;
+      controls.dampingFactor = 0.08;
+      controls.enablePan = false;
+      controls.minDistance = 55;
+      controls.maxDistance = 360;
+      controls.minPolarAngle = 0.15;
+      controls.maxPolarAngle = 1.45;
+      controls.autoRotate = !reduce;
+      controls.autoRotateSpeed = 0.7;
+      controls.addEventListener('start', function () { controls.autoRotate = false; tween = null; });
+
+      scene.add(new THREE.HemisphereLight(0xffffff, 0xcdbfae, 1.9));
+      var sun = new THREE.DirectionalLight(0xffffff, 2.3);
+      sun.position.set(70, 150, 95);
+      sun.castShadow = true;
+      sun.shadow.mapSize.set(2048, 2048);
+      var sc = sun.shadow.camera; sc.left = -95; sc.right = 95; sc.top = 95; sc.bottom = -95; sc.near = 20; sc.far = 450;
+      sun.shadow.bias = -0.0006;
+      sun.shadow.radius = 5;
+      scene.add(sun);
+      var fill = new THREE.DirectionalLight(0xfff3e6, 0.55);
+      fill.position.set(-110, 60, -40);
+      scene.add(fill);
+      var ground = new THREE.Mesh(new THREE.PlaneGeometry(900, 900), new THREE.ShadowMaterial({ opacity: 0.17 }));
+      ground.rotation.x = -Math.PI / 2;
+      ground.receiveShadow = true;
+      scene.add(ground);
+
+      var loader = new THREE.TextureLoader();
+      var aniso = renderer.capabilities.getMaxAnisotropy();
+      var pending = 4;
+      function done() { if (--pending === 0) box.classList.add('is-ready'); }
+      function tex(url, cb) {
+        var t = loader.load(url, function () { if (cb) cb(t); done(); }, undefined, function () { fail(); });
+        t.colorSpace = THREE.SRGBColorSpace;
+        t.anisotropy = aniso;
+        return t;
+      }
+      var logoMats = [];
+      var tFront = {
+        grande: tex('img/bolsa/frente-grande.jpg'),
+        mediana: tex('img/bolsa/frente-mediana.jpg'),
+        pequena: tex('img/bolsa/frente-pequena.jpg', function (t) { logoMats.forEach(function (lm) { paintCuff(lm, t.image); }); })
+      };
+      var tInside = tex('img/bolsa/interior-plano.jpg');
+
+      var mBrown = new THREE.MeshStandardMaterial({ color: BROWN, roughness: 0.72 });
+      var mIn = new THREE.MeshStandardMaterial({ map: tInside, roughness: 0.9 });
+      var mInBottom = new THREE.MeshStandardMaterial({ color: INNER, roughness: 0.95 });
+      var mRibbon = new THREE.MeshStandardMaterial({ color: RIBBON, roughness: 0.85, side: THREE.DoubleSide });
+
+      // Ajusta el plano interior a cada pared: el arte queda bajo el doblez y se recorta al centro si la pared es más angosta.
+      function insideUV(geo, face, key, wallW, wallH, cuff) {
+        var uv = geo.attributes.uv, p = PANEL[key], pw = p[1] - p[0];
+        var s = (1 - TOP) * IMG_H / (wallH - cuff);
+        var span = Math.min(1, (wallW * s) / (pw * IMG_W)) * pw;
+        var u0 = p[0] + (pw - span) / 2;
+        var vTop = 1 - (TOP * IMG_H - cuff * s) / IMG_H;
+        for (var k = 0; k < 4; k++) {
+          var i = face * 4 + k;
+          uv.setXY(i, u0 + uv.getX(i) * span, uv.getY(i) * vTop);
+        }
+        uv.needsUpdate = true;
+      }
+
+      // Doblez interior con el logo pequeño: «COLLEZIONI» de 3,8 cm.
+      function paintCuff(lm, img) {
+        var cv = document.createElement('canvas');
+        cv.width = Math.round(lm.w * PXCM); cv.height = Math.round(lm.h * PXCM);
+        var cx = cv.getContext('2d');
+        cx.fillStyle = BROWN; cx.fillRect(0, 0, cv.width, cv.height);
+        var dw = 3.8 * PXCM * (LOGO_CROP[2] / 217), dh = dw * LOGO_CROP[3] / LOGO_CROP[2];
+        cx.drawImage(img, LOGO_CROP[0], LOGO_CROP[1], LOGO_CROP[2], LOGO_CROP[3], (cv.width - dw) / 2, (cv.height - dh) / 2, dw, dh);
+        var t = new THREE.CanvasTexture(cv);
+        t.colorSpace = THREE.SRGBColorSpace;
+        t.anisotropy = aniso;
+        lm.mat.map = t; lm.mat.color.set('#ffffff'); lm.mat.needsUpdate = true;
+      }
+
+      // Asa de cinta plana: una banda que sigue la curva del asa.
+      function ribbon(points, width) {
+        var curve = new THREE.CatmullRomCurve3(points), N = 64, pos = [], uvs = [], idx = [];
+        for (var i = 0; i <= N; i++) {
+          var t = i / N, p = curve.getPointAt(t), T = curve.getTangentAt(t);
+          var n = new THREE.Vector3(-T.y, T.x, 0).normalize().multiplyScalar(width / 2);
+          pos.push(p.x + n.x, p.y + n.y, p.z, p.x - n.x, p.y - n.y, p.z);
+          uvs.push(0, t, 1, t);
+          if (i < N) { var a = i * 2; idx.push(a, a + 1, a + 2, a + 1, a + 3, a + 2); }
+        }
+        var g = new THREE.BufferGeometry();
+        g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+        g.setAttribute('uv', new THREE.Float32BufferAttribute(uvs, 2));
+        g.setIndex(idx);
+        g.computeVertexNormals();
+        return g;
+      }
+
+      function makeBag(key) {
+        var s = SIZES[key], W = s.W, H = s.H, D = s.D, c = s.cuff, t = 0.18;
+        var g = new THREE.Group();
+        var mOut = new THREE.MeshStandardMaterial({ map: tFront[key], roughness: 0.7 });
+        function wall(w, h, d, mats, x, y, z) {
+          var geo = new THREE.BoxGeometry(w, h, d);
+          var m = new THREE.Mesh(geo, mats);
+          m.position.set(x, y, z); m.castShadow = true; m.receiveShadow = true;
+          g.add(m);
+          return geo;
+        }
+        var B = mBrown;
+        // Caras de la caja: +x, -x, +y, -y, +z, -z
+        insideUV(wall(W, H, t, [B, B, B, B, mOut, mIn], 0, H / 2, D / 2 - t / 2), 5, 'front', W, H, c);
+        insideUV(wall(W, H, t, [B, B, B, B, mIn, mOut], 0, H / 2, -D / 2 + t / 2), 4, 'back', W, H, c);
+        insideUV(wall(t, H, D - 2 * t, [B, mIn, B, B, B, B], W / 2 - t / 2, H / 2, 0), 1, 'g1', D, H, c);
+        insideUV(wall(t, H, D - 2 * t, [mIn, B, B, B, B, B], -W / 2 + t / 2, H / 2, 0), 0, 'g2', D, H, c);
+        wall(W - 2 * t, t, D - 2 * t, [B, B, mInBottom, B, B, B], 0, t / 2, 0);
+
+        var e = t + 0.06;
+        var lm = { mat: new THREE.MeshStandardMaterial({ color: BROWN, roughness: 0.72 }), w: W - 2 * e, h: c };
+        logoMats.push(lm);
+        if (tFront.pequena.image && tFront.pequena.image.complete) paintCuff(lm, tFront.pequena.image);
+        function cuff(w, mat, x, z, ry) {
+          var m = new THREE.Mesh(new THREE.PlaneGeometry(w, c), mat);
+          m.position.set(x, H - c / 2, z); m.rotation.y = ry; m.receiveShadow = true;
+          g.add(m);
+        }
+        cuff(W - 2 * e, lm.mat, 0, D / 2 - e, Math.PI);
+        cuff(W - 2 * e, lm.mat, 0, -D / 2 + e, 0);
+        cuff(D - 2 * e, B, W / 2 - e, 0, -Math.PI / 2);
+        cuff(D - 2 * e, B, -W / 2 + e, 0, Math.PI / 2);
+
+        var a = Math.min(9, W * 0.2), hh = Math.min(15, H * 0.4);
+        [D / 2 - t - 0.5, -D / 2 + t + 0.5].forEach(function (z) {
+          var pts = [[-a, H - 2.5], [-a, H + 0.5], [-a * 0.96, H + hh * 0.5], [-a * 0.62, H + hh * 0.9], [0, H + hh], [a * 0.62, H + hh * 0.9], [a * 0.96, H + hh * 0.5], [a, H + 0.5], [a, H - 2.5]]
+            .map(function (q) { return new THREE.Vector3(q[0], q[1], z); });
+          var hm = new THREE.Mesh(ribbon(pts, 2.4), mRibbon);
+          hm.castShadow = true;
+          g.add(hm);
+        });
+        g.userData.size = s;
+        scene.add(g);
+        return g;
+      }
+
+      var bags = { grande: makeBag('grande'), mediana: makeBag('mediana'), pequena: makeBag('pequena') };
+      var LAYOUT = { grande: [-40, -20], mediana: [0, 2], pequena: [35, 22] };
+      var ROT = 0.42;
+
+      // Vistas: la cámara se ubica con ángulos esféricos alrededor del objetivo.
+      function viewFor(key) {
+        if (key === 'todas') return { target: new THREE.Vector3(-2, 20, 1), r: 235, polar: 1.08, az: 0.6 };
+        var s = SIZES[key];
+        return { target: new THREE.Vector3(0, s.H * 0.55, 0), r: 62 + Math.max(s.W, s.H) * 1.75, polar: 1.05, az: 0.55 };
+      }
+      function place(key) {
+        Object.keys(bags).forEach(function (k) {
+          var b = bags[k], show = key === 'todas' || key === k;
+          b.visible = show;
+          if (key === 'todas') b.position.set(LAYOUT[k][0], 0, LAYOUT[k][1]); else b.position.set(0, 0, 0);
+          b.rotation.y = ROT;
+        });
+      }
+      function camPos(v) {
+        return new THREE.Vector3(
+          v.target.x + v.r * Math.sin(v.polar) * Math.sin(v.az),
+          v.target.y + v.r * Math.cos(v.polar),
+          v.target.z + v.r * Math.sin(v.polar) * Math.cos(v.az));
+      }
+      var tween = null;
+      function view(key, instant) {
+        place(key);
+        var v = viewFor(key), to = camPos(v);
+        if (instant || reduce) { controls.target.copy(v.target); camera.position.copy(to); controls.update(); tween = null; return; }
+        tween = { t0: performance.now(), dur: 700, fromP: camera.position.clone(), toP: to, fromT: controls.target.clone(), toT: v.target.clone() };
+      }
+      view('todas', true);
+
+      function resize() {
+        var w = box.clientWidth, h = box.clientHeight;
+        if (!w || !h) return;
+        renderer.setSize(w, h, false);
+        camera.aspect = w / h;
+        camera.updateProjectionMatrix();
+      }
+      resize();
+      if ('ResizeObserver' in window) new ResizeObserver(resize).observe(box);
+
+      var raf = 0;
+      function frame(now) {
+        raf = requestAnimationFrame(frame);
+        if (tween) {
+          var k = Math.min(1, (now - tween.t0) / tween.dur), e = 1 - Math.pow(1 - k, 3);
+          camera.position.lerpVectors(tween.fromP, tween.toP, e);
+          controls.target.lerpVectors(tween.fromT, tween.toT, e);
+          if (k >= 1) tween = null;
+        }
+        controls.update();
+        renderer.render(scene, camera);
+      }
+      return {
+        play: function () { if (!raf) { resize(); raf = requestAnimationFrame(frame); } },
+        pause: function () { if (raf) { cancelAnimationFrame(raf); raf = 0; } },
+        view: function (key) { view(key, false); }
+      };
+    }
+  })();
 </script>
 
 </body>
